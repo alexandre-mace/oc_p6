@@ -31,17 +31,17 @@ class Trick
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Comment", mappedBy="trick", orphanRemoval=true)
      */
-    private $comments;
+    private $comments = null;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Image", mappedBy="trick", orphanRemoval=true)
      */
-    private $images;
+    private $images = null;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Video", mappedBy="trick", orphanRemoval=true)
      */
-    private $videos;
+    private $videos = null;
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Category", inversedBy="tricks")
