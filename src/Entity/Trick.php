@@ -31,20 +31,20 @@ class Trick
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Comment", mappedBy="trick", orphanRemoval=true)
      */
-    private $comments
+    private $comments;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Image", mappedBy="trick", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\Image", mappedBy="trick", orphanRemoval=true, cascade={"persist"})
      */
-    private $images
+    private $images;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Video", mappedBy="trick", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\Video", mappedBy="trick", orphanRemoval=true, cascade={"persist"})
      */
-    private $videos
+    private $videos;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Category", inversedBy="tricks")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Category", inversedBy="tricks", cascade={"persist"})
      */
     private $categories;
 
