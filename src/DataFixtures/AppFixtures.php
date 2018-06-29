@@ -30,7 +30,7 @@ class AppFixtures extends Fixture
                 $imagedata['alt'] = 'Photo de la figure ' . $trickdata['name'] . ' de snowboard.';
 
                 $objectImage = new Image();
-                $objectImage->setUrl($imagedata['url']);
+                $objectImage->setSrc($imagedata['src']);
                 $objectImage->setAlt($imagedata['alt']);
                 $objectImage->setTrick($trick);
 
@@ -63,6 +63,7 @@ class AppFixtures extends Fixture
 
             $trick->setName($trickdata['name']);
             $trick->setDescription($trickdata['description']);
+            $trick->setAddedAt(new \datetime());
 
             $manager->persist($trick);
 

@@ -19,11 +19,6 @@ class Image
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $url;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
     private $alt;
 
     /**
@@ -32,21 +27,14 @@ class Image
      */
     private $trick;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $src;
+
     public function getId()
     {
         return $this->id;
-    }
-
-    public function getUrl(): ?string
-    {
-        return $this->url;
-    }
-
-    public function setUrl(string $url): self
-    {
-        $this->url = $url;
-
-        return $this;
     }
 
     public function getAlt(): ?string
@@ -69,6 +57,18 @@ class Image
     public function setTrick(?Trick $trick): self
     {
         $this->trick = $trick;
+
+        return $this;
+    }
+
+    public function getSrc(): ?string
+    {
+        return $this->src;
+    }
+
+    public function setSrc(string $src): self
+    {
+        $this->src = $src;
 
         return $this;
     }

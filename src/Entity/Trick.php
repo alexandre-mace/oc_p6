@@ -48,6 +48,11 @@ class Trick
      */
     private $categories;
 
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $addedAt;
+
     public function __construct()
     {
         $this->comments = new ArrayCollection();
@@ -200,6 +205,18 @@ class Trick
         if ($this->categories->contains($category)) {
             $this->categories->removeElement($category);
         }
+
+        return $this;
+    }
+
+    public function getAddedAt(): ?\DateTimeInterface
+    {
+        return $this->addedAt;
+    }
+
+    public function setAddedAt(\DateTimeInterface $addedAt): self
+    {
+        $this->addedAt = $addedAt;
 
         return $this;
     }
