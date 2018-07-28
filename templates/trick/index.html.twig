@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+
+    <div class="header basic-header">
+        <div class="overlay"></div>
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col d-flex">
+
+                    <div class="jumbotron my-auto">
+                        <h1 class="display-4">Welcome on SnowTricks !</h1>
+                        <p class="lead">SnowTricks is a snowboard tricks presentation website with a lovely community.</p>
+                        <a class="btn btn-outline-dark btn-lg" href="#" role="button">Discover all tricks</a>
+                    </div>    
+
+                    <a id="arrow-scroll-bottom" href="#last_tricks">
+                        <i class="fas fa-arrow-down fa-2x"></i>
+                    </a>   
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block body %}
+    <h1  id="last_tricks" class="my-5 text-center">Last tricks</h1>
+
+    <div class="row text-center text-lg-left">
+
+        {% for trick in tricks %}        
+            <div class="col-lg-4 col-md-6">
+                <a href="#" class="d-block mb-2">
+                    <img class="img-fluid img-thumbnail" src="{{ asset('uploads/images/' ~ trick.mainImage.file ?? trick.images|first.file) }}" alt ="{{ trick.images|first.alt }}"></img>
+                </a>
+                <h5 class="text-center trick_name">
+                    <a href="{{ path('trick_show', {'slug': trick.slug}) }}">
+                        {{ trick.name }}
+                    </a>
+                    <br>
+                    <div class="d-flex justify-content-center my-3">
+                        <a href="{{ path('trick_update', {'slug': trick.slug}) }}">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <div class="mx-2"></div>
+                        <a href="{{ path('trick_delete', {'slug': trick.slug}) }}">
+                            <i class="fas fa-trash-alt"></i>    
+                        </a>
+                    </div>
+                                    
+                </h5>
+                <div class="mb-4 text-center">
+                    {% for category in trick.categories %}
+                        <button type="button" class="btn btn-outline-dark btn-sm">{{ category.name }}</button>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor%}
+
+        <div class="col-lg-4 col-md-6 text-center my-auto">
+            <a href="{{ path('trick_add') }}" role="button" class="btn btn-outline-success btn-lg btn-add">Add a new trick  <i class="fas fa-plus-circle"></i></a>
+        </div>
+        
+    </div>
+{% endblock %}

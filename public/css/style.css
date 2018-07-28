@@ -1,0 +1,56 @@
+a {
+  color: inherit;
+}
+a:hover {
+  text-decoration: none;
+  color: #919191;
+}
+a:hover img {
+  opacity: 0.6;
+}
+nav {
+  z-index: 1;
+}
+.header {
+  height: 100vh;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+.basic-header {
+  background: url(../images/home.jpg) no-repeat center center fixed;
+}
+.overlay {
+	position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  opacity: .5;
+}
+.jumbotron {
+	background-color: unset;
+}
+.trick_name {
+	font-weight: 500;
+	font-size: 1.25rem;
+}
+
+#arrow-scroll-bottom {
+	position: absolute;
+  bottom: 2em;
+  right: 0;
+}
+.fa-trash-alt {
+  color: red;
+}
+
+.btn-add {
+  padding: 3rem;
+}
+.showImg, .showVideo {
+  max-width: 100%;
+  height: auto;
+}
