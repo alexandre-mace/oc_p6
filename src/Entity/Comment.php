@@ -30,7 +30,7 @@ class Comment
      * @ORM\Column(type="datetime")
      * @Assert\DateTime() 
      */
-    private $addetAt;
+    private $addedAt;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Trick", inversedBy="comments")
@@ -38,6 +38,11 @@ class Comment
      * @Assert\Valid
      */
     private $trick;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $content;
 
     public function getId()
     {
@@ -56,17 +61,17 @@ class Comment
         return $this;
     }
 
-    public function getAddetAt(): ?\DateTimeInterface
+    public function getAddedAt(): ?\DateTimeInterface
     {
-        return $this->addetAt;
+        return $this->addedAt;
     }
 
     /**
      * @ORM\PrePersist
      */
-    public function setAddetAt()
+    public function setAddedAt()
     {
-        $this->addetAt = new \DateTime();
+        $this->addedAt = new \DateTime();
 
         return $this;
     }
@@ -79,6 +84,18 @@ class Comment
     public function setTrick(?Trick $trick): self
     {
         $this->trick = $trick;
+
+        return $this;
+    }
+
+    public function getContent(): ?string
+    {
+        return $this->content;
+    }
+
+    public function setContent(string $content): self
+    {
+        $this->content = $content;
 
         return $this;
     }

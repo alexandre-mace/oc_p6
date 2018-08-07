@@ -7,9 +7,12 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use App\Entity\Trick;
+use App\Entity\Comment;
 use App\Entity\Category;
 use App\Form\TrickType;
+use App\Form\CommentType; 
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -37,13 +40,20 @@ class TrickController extends Controller
             throw new NotFoundHttpException("The trick you are looking for doesnt exist.");
         }  
 
+        $comments = $manager->getRepository(Comment::class)->getCommentsByTrick($trick);
+
+        $comment = new Comment();
+        $form = $this->createForm(CommentType::class, $comment);
+
         return $this->render('trick/trick.html.twig', [
-            'trick' => $trick
+            'trick' => $trick,
+            'form' => $form->createView()
         ]);
     }
 
     /**
      * @Route("/add", name="trick_add")
+     * @Security("has_role('ROLE_USER')")     
      */
     public function add(Request $request, EntityManagerInterface $manager)
     {
@@ -51,6 +61,7 @@ class TrickController extends Controller
 	    if ($form->isSubmitted() && $form->isValid()) {
 	        $manager->persist($form->getData());
 	        $manager->flush();
+            $this->addFlash('notice', 'The new trick has been added !');
 	        return $this->redirectToRoute('trick_index');
 	    }
 	    return $this->render('trick/edit.html.twig', array(
@@ -60,12 +71,14 @@ class TrickController extends Controller
 
     /**
      * @Route("/update/{slug}", name="trick_update")
+     * @Security("has_role('ROLE_USER')")          
      */
     public function update(Request $request, EntityManagerInterface $manager, Trick $trick)
     {
 	    $form = $this->createForm(TrickType::class, $trick)->handleRequest($request);
 	    if ($form->isSubmitted() && $form->isValid()) {
 	        $manager->flush();
+            $this->addFlash('notice', 'The trick has been updated !');
 	        return $this->redirectToRoute('trick_index');
 	    }
 	    return $this->render('trick/edit.html.twig', array(
@@ -75,12 +88,14 @@ class TrickController extends Controller
 
     /**
      * @Route("/delete/{slug}", name="trick_delete")
+     * @Security("has_role('ROLE_USER')")          
      */
     public function delete(Request $request, EntityManagerInterface $manager, Trick $trick)
     {
         $trick->setMainImage(null);
 	    $manager->remove($trick);
 		$manager->flush();
+        $this->addFlash('notice', 'The trick has been successfully deleted !');
 	    return $this->redirectToRoute('trick_index');
 	}
 

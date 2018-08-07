@@ -54,3 +54,19 @@ nav {
   max-width: 100%;
   height: auto;
 }
+
+.flash-notice {
+  z-index: 1;
+  position: absolute;
+  top: 8em;
+  align-self: center;
+}
+
+.edit_delete {
+  position: absolute;
+  right: 0;
+  top: 6em;
+}
+.user_form_row {
+  height: 100vh;
+}

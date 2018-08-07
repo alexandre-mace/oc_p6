@@ -24,6 +24,10 @@ class AppFixtures extends Fixture
 
         $singletonCategories = [];
 
+        $user = new User;
+        $user->setName('a');
+        $user->setPassword('aaaaaa');
+
         foreach ($data['tricks'] as $trickarray => $trickdata) {
             $trick = new Trick();
             foreach ($trickdata['images'] as $image => $imagedata) {
@@ -40,14 +44,8 @@ class AppFixtures extends Fixture
             foreach ($trickdata['videos'] as $videoarray => $videodata) {
 
                 $objectVideo = new Video();
-                $objectVideo->setWidth($videodata['width']);
-                $objectVideo->setHeight($videodata['height']);
-                $objectVideo->setControls($videodata['controls']);
-                $objectVideo->setSrc($videodata['src']);
-                $objectVideo->setType($videodata['type']);
-                $objectVideo->setAutoplay($videodata['autoplay']);
+                $objectVideo->setUrl('https://www.youtube.com/watch?v=T1zEBh5HLH8');
                 $objectVideo->setTrick($trick);
-
                 $trick->addVideo($objectVideo);
             }
             

@@ -7,6 +7,15 @@
         <div class="container h-100">
             <div class="row h-100">
                 <div class="col d-flex">
+                	<div class="edit_delete d-flex justify-content-center my-3">
+                        <a href="{{ path('trick_update', {'slug': trick.slug}) }}">
+                            <i class="fas fa-edit fa-2x"></i>
+                        </a>
+                        <div class="mx-2"></div>
+                        <a href="{{ path('trick_delete', {'slug': trick.slug}) }}">
+                            <i class="fas fa-trash-alt fa-2x"></i>    
+                        </a>
+                    </div>
 
                     <div class="jumbotron my-auto">
                         <h1 class="display-4">{{ trick.name }}</h1>
@@ -44,6 +53,7 @@
 			<p class="pt-5 pb-2">{{ trick.description|capitalize }}.</p>
 		</div>
 	</div>			
+
 	<div class="row">
 		<div class="col text-center">
 			{% for category in trick.categories %}
@@ -51,12 +61,26 @@
             {% endfor %}
 		</div>
 	</div>
-	<!-- 
+
+	<hr>
+	{{ include('comment/add.html.twig') }}
+	<hr>
+	
+	{% for comment in trick.comments %}
 		<div class="row">
-			<div class="col">
-				Système de discussion
+			<div class="col-2">
+				<div class="d-flex flex-column">
+					<p>{{ trick.comment.author }}</p>
+					<img src="{{ asset('uploads/images/' ~ trick.comment.author.profilePicture) }}">
+				</div>
+			</div>
+			<div class="col-10">
+				<div class="d-flex flex-column">
+					<p>{{ trick.comment.addedAt }}</p>
+					<textarea>{{ trick.comment.content }}</textarea>
+				</div>
 			</div>
 		</div>
-	-->			
+	{% endfor %}
 
 {% endblock %}
