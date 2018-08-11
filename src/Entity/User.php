@@ -10,7 +10,8 @@ use Symfony\Component\Security\Core\User\UserInterface;
 /**
  * @ORM\Table(name="app_users")
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
- * @UniqueEntity("username")
+ * @UniqueEntity(fields="email", message="Email already taken")
+ * @UniqueEntity(fields="username", message="Username already taken")
  * @ORM\HasLifecycleCallbacks()
  */
 class User implements UserInterface, \Serializable
@@ -38,7 +39,6 @@ class User implements UserInterface, \Serializable
 
     /**
      * @ORM\Column(type="datetime")
-     * @Assert\DateTime()
      */
     private $addedAt;
 
@@ -47,6 +47,13 @@ class User implements UserInterface, \Serializable
      * @Assert\NotBlank()
      */
     private $username;
+
+    /**
+     * @ORM\Column(type="string", length=255, unique=true)
+     * @Assert\NotBlank()
+     * @Assert\Email()
+     */
+    private $email;
 
     public function getId()
     {
@@ -100,16 +107,14 @@ class User implements UserInterface, \Serializable
         return $this;
     }
 
-    public function getProfilePicture(): ?string
+    public function getEmail()
     {
-        return $this->profilePicture;
+        return $this->email;
     }
 
-    public function setProfilePicture(string $profilePicture): self
+    public function setEmail($email)
     {
-        $this->profilePicture = $profilePicture;
-
-        return $this;
+        $this->email = $email;
     }
 
     public function getSalt()

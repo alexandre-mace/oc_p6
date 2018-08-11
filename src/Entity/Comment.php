@@ -21,7 +21,6 @@ class Comment
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User")
      * @ORM\JoinColumn(nullable=false)
-     * @Assert\NotBlank()    
      * @Assert\Valid 
      */
     private $author;
@@ -35,7 +34,6 @@ class Comment
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Trick", inversedBy="comments")
      * @ORM\JoinColumn(nullable=false)
-     * @Assert\Valid
      */
     private $trick;
 
@@ -44,6 +42,9 @@ class Comment
      */
     private $content;
 
+    public function __construct(Trick $trick) {
+        $this->setTrick($trick);
+    }
     public function getId()
     {
         return $this->id;

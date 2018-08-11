@@ -1,9 +1,8 @@
 <div class="row" id="form">
 	<div class="col pt-5">
-		{{ form_start(form) }}  
+			{{ form_start(form, {method: 'POST', action: path('comment_add', {'slug': trick.slug})}) }} 
 			{{ form_row(form._token) }}
 			{{ form_errors(form) }}
-
 			{{ form_row(form.content) }}
 			<button type="submit" class="btn btn-success">Save</button>
 		{{ form_end(form, { "render_rest": false }) }}

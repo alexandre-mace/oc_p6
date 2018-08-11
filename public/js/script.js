@@ -5,7 +5,20 @@ $(function() {
     $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 800);
   });
 });
-
+// Bottom scrolling arrow
+$(function() {
+  $('#arrow-scroll-top').on('click', function(e) {
+    e.preventDefault();
+    $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 800);
+  });
+});
+// Button scrolling
+$(function() {
+  $('#button-scrolling').on('click', function(e) {
+    e.preventDefault();
+    $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 800);
+  });
+});
 
 // Dynamic collection handler
 $(".btn-add").on("click", function() {

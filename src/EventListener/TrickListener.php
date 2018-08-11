@@ -8,14 +8,17 @@ use Doctrine\ORM\Event\LifecycleEventArgs;
 use Doctrine\ORM\Event\PreUpdateEventArgs;
 use App\Entity\Trick;
 use App\Service\Slugger;
+use Symfony\Component\Security\Core\Security;
 
 class TrickListener
 {
     private $slugger;
+    private $security;
 
-    public function __construct(Slugger $slugger)
+    public function __construct(Slugger $slugger, Security $security)
     {
         $this->slugger = $slugger;
+        $this->security = $security;
     }
 
     public function prePersist(LifecycleEventArgs $args)
@@ -23,6 +26,7 @@ class TrickListener
         $entity = $args->getEntity();
 
         $this->slugify($entity);
+        $this->hydrateAuthor($entity);
     }
 
     public function preUpdate(PreUpdateEventArgs $args)
@@ -43,5 +47,15 @@ class TrickListener
 
         $slug = $this->slugger->slugify($name);
         $entity->setSlug($slug);
+    }
+    
+    private function hydrateAuthor($entity)
+    {
+        // upload only works for Trick entities
+        if (!$entity instanceof Trick) {
+            return;
+        }
+        $user = $this->security->getUser();
+        $entity->setAuthor($user);
     }
 }

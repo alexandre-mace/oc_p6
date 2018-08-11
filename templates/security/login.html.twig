@@ -1,9 +1,24 @@
 {# templates/security/login.html.twig #}
 {% extends 'base.html.twig' %}
 
+{% block header %}
+
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col d-flex">
+                <div class="jumbotron my-auto">
+                    <h1 class="display-4">Sign up</h1>
+                    <p>Fill the form below to register</p>
+                </div>    
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
 {% block body %}
     
-    <div class="row user_form_row d-flex justify-content-center">
+    <div class="row d-flex justify-content-center">
         <div class="align-self-center">
             {% if error %}
                 <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -30,4 +45,16 @@
         </div>
     </div>
 
+{% endblock %}
+
+{% block footer %}
+    <footer class="fixed-bottom">
+        <div class="container">
+            <div class="row mt-5 pt-2">
+                <div class="col">
+                    <p class="text-center">SnowTricks, all rights reserved <i class="far fa-copyright"></i> 2018</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 {% endblock %}

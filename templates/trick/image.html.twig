@@ -1,4 +1,4 @@
-<div class="col-4 p-2" id="image-{{ form.vars.name }}">
+<div class="col-xl-2 p-2" id="image-{{ form.vars.name }}">
     <div class="border p-2 w-100">
 		{{ form_row(form.file, { attr: { 'data-rel': form.vars.name }}) }}
  		<img id="showImg-{{ form.vars.name }}" class="showImg" src="{{ asset('uploads/images/' ~ form.file.vars.data) }}" alt="your image"/>

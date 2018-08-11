@@ -6,16 +6,23 @@
         <div class="overlay"></div>
         <div class="container h-100">
             <div class="row h-100">
-                <div class="col d-flex">
-                	<div class="edit_delete d-flex justify-content-center my-3">
-                        <a href="{{ path('trick_update', {'slug': trick.slug}) }}">
-                            <i class="fas fa-edit fa-2x"></i>
-                        </a>
-                        <div class="mx-2"></div>
-                        <a href="{{ path('trick_delete', {'slug': trick.slug}) }}">
-                            <i class="fas fa-trash-alt fa-2x"></i>    
-                        </a>
-                    </div>
+                <div class="col d-flex flex-column">
+                	{% for message in app.flashes('notice') %}
+                        <div class="flash-notice alert alert-info">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                    {% if is_granted('ROLE_USER') %}
+	                	<div class="edit_delete d-flex justify-content-center my-3">
+	                        <a href="{{ path('trick_update', {'slug': trick.slug}) }}">
+	                            <i class="fas fa-edit fa-2x"></i>
+	                        </a>
+	                        <div class="mx-2"></div>
+	                        <a href="{{ path('trick_delete', {'slug': trick.slug}) }}">
+	                            <i class="fas fa-trash-alt fa-2x"></i>    
+	                        </a>
+	                    </div>
+                    {% endif %}
 
                     <div class="jumbotron my-auto">
                         <h1 class="display-4">{{ trick.name }}</h1>
@@ -62,22 +69,23 @@
 		</div>
 	</div>
 
-	<hr>
-	{{ include('comment/add.html.twig') }}
-	<hr>
-	
+    {% if is_granted('ROLE_USER') %}
+		<hr>
+			{{ include('comment/add.html.twig') }}
+	{% endif %}
+
 	{% for comment in trick.comments %}
+		<hr>
 		<div class="row">
-			<div class="col-2">
+			<div class="col-1">
 				<div class="d-flex flex-column">
-					<p>{{ trick.comment.author }}</p>
-					<img src="{{ asset('uploads/images/' ~ trick.comment.author.profilePicture) }}">
+					<p>{{ comment.author.username }}</p>
 				</div>
 			</div>
-			<div class="col-10">
+			<div class="col-9">
 				<div class="d-flex flex-column">
-					<p>{{ trick.comment.addedAt }}</p>
-					<textarea>{{ trick.comment.content }}</textarea>
+					<p>{{ comment.addedAt|date('Y-m-d H:i:s') }}</p>
+					<p>{{ comment.content }}</p>
 				</div>
 			</div>
 		</div>

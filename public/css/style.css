@@ -11,6 +11,9 @@ a:hover img {
 nav {
   z-index: 1;
 }
+.r-0 {
+  right: 0;
+}
 .header {
   height: 100vh;
   -webkit-background-size: cover;
@@ -65,8 +68,5 @@ nav {
 .edit_delete {
   position: absolute;
   right: 0;
-  top: 6em;
-}
-.user_form_row {
-  height: 100vh;
+  top: 8em;
 }

@@ -39,12 +39,7 @@ class TrickController extends Controller
         {
             throw new NotFoundHttpException("The trick you are looking for doesnt exist.");
         }  
-
-        $comments = $manager->getRepository(Comment::class)->getCommentsByTrick($trick);
-
-        $comment = new Comment();
-        $form = $this->createForm(CommentType::class, $comment);
-
+        $form = $this->createForm(CommentType::class);
         return $this->render('trick/trick.html.twig', [
             'trick' => $trick,
             'form' => $form->createView()
@@ -53,7 +48,7 @@ class TrickController extends Controller
 
     /**
      * @Route("/add", name="trick_add")
-     * @Security("has_role('ROLE_USER')")     
+     * @Security("is_granted('ROLE_USER')")     
      */
     public function add(Request $request, EntityManagerInterface $manager)
     {
@@ -71,10 +66,10 @@ class TrickController extends Controller
 
     /**
      * @Route("/update/{slug}", name="trick_update")
-     * @Security("has_role('ROLE_USER')")          
      */
     public function update(Request $request, EntityManagerInterface $manager, Trick $trick)
     {
+        $this->denyAccessUnlessGranted('edit', $trick);
 	    $form = $this->createForm(TrickType::class, $trick)->handleRequest($request);
 	    if ($form->isSubmitted() && $form->isValid()) {
 	        $manager->flush();
@@ -88,10 +83,11 @@ class TrickController extends Controller
 
     /**
      * @Route("/delete/{slug}", name="trick_delete")
-     * @Security("has_role('ROLE_USER')")          
+     * @Security("is_granted('ROLE_USER')")          
      */
     public function delete(Request $request, EntityManagerInterface $manager, Trick $trick)
     {
+        $this->denyAccessUnlessGranted('delete', $trick);
         $trick->setMainImage(null);
 	    $manager->remove($trick);
 		$manager->flush();
