@@ -9,20 +9,24 @@ use Doctrine\ORM\Event\PreUpdateEventArgs;
 use App\Entity\Image;
 use App\Service\FileUploader;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Security\Core\Security;
 
 class ImageUploadListener
 {
     private $uploader;
+    private $security;
 
-    public function __construct(FileUploader $uploader)
+    public function __construct(FileUploader $uploader, Security $security)
     {
         $this->uploader = $uploader;
+        $this->security = $security;
     }
 
     public function prePersist(LifecycleEventArgs $args)
     {
         $entity = $args->getEntity();
 
+        $this->hydrateAuthor($entity);
         $this->uploadFile($entity);
     }
 
@@ -48,4 +52,14 @@ class ImageUploadListener
             $entity->setFile($fileName);
         }
     }
+    private function hydrateAuthor($entity)
+    {
+        // upload only works for Image entities
+        if (!$entity instanceof Image) {
+            return;
+        }
+        $user = $this->security->getUser();
+        $entity->setAuthor($user);
+    }
+
 }

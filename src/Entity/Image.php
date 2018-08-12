@@ -43,6 +43,12 @@ class Image
      * @ORM\Column(type="string", length=255)
      */
     private $alt = 'Image of snowboard trick';
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="images")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $author;
     
 
     public function getId()
@@ -94,6 +100,18 @@ class Image
     public function setAlt(string $alt): self
     {
         $this->alt = $alt;
+
+        return $this;
+    }
+
+    public function getAuthor(): ?User
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(?User $author): self
+    {
+        $this->author = $author;
 
         return $this;
     }

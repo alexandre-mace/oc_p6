@@ -66,20 +66,21 @@ class TrickController extends Controller
 
     /**
      * @Route("/update/{slug}", name="trick_update")
+     * @Security("is_granted('ROLE_USER')")     
      */
     public function update(Request $request, EntityManagerInterface $manager, Trick $trick)
     {
-        $this->denyAccessUnlessGranted('edit', $trick);
-	    $form = $this->createForm(TrickType::class, $trick)->handleRequest($request);
-	    if ($form->isSubmitted() && $form->isValid()) {
-	        $manager->flush();
+        $form = $this->createForm(TrickType::class, $trick)->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $manager->flush();
             $this->addFlash('notice', 'The trick has been updated !');
-	        return $this->redirectToRoute('trick_index');
-	    }
-	    return $this->render('trick/edit.html.twig', array(
-	        'form' => $form->createView(),
-	    ));
-	}
+            return $this->redirectToRoute('trick_index');
+        }
+        return $this->render('trick/edit.html.twig', array(
+            'trick' => $trick,
+            'form' => $form->createView(),
+        ));
+    }
 
     /**
      * @Route("/delete/{slug}", name="trick_delete")
