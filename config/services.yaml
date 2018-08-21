@@ -54,3 +54,4 @@ services:
     App\EventListener\CommentListener:
         tags:
             - { name: doctrine.event_listener, event: prePersist }
+    

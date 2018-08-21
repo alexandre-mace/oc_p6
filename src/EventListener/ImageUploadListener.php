@@ -49,9 +49,11 @@ class ImageUploadListener
         // only upload new files
         if ($file instanceof UploadedFile) {
             $fileName = $this->uploader->upload($file);
-            $entity->setFile($fileName);
+            $entity->setName($fileName);
         }
+
     }
+    
     private function hydrateAuthor($entity)
     {
         // upload only works for Image entities

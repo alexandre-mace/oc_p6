@@ -40,7 +40,7 @@ class TrickController extends Controller
             throw new NotFoundHttpException("The trick you are looking for doesnt exist.");
         }  
         $form = $this->createForm(CommentType::class);
-        return $this->render('trick/trick.html.twig', [
+        return $this->render('trick/view.html.twig', [
             'trick' => $trick,
             'form' => $form->createView()
         ]);
@@ -59,7 +59,7 @@ class TrickController extends Controller
             $this->addFlash('notice', 'The new trick has been added !');
 	        return $this->redirectToRoute('trick_index');
 	    }
-	    return $this->render('trick/edit.html.twig', array(
+	    return $this->render('trick/add.html.twig', array(
 	        'form' => $form->createView(),
 	    ));
 	}

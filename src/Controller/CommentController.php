@@ -33,7 +33,7 @@ class CommentController extends Controller
             return $this->redirectToRoute('trick_show', array('slug' => $trick->getSlug()));
         }
                 
-        return $this->render('trick/trick.html.twig', [
+        return $this->render('trick/view.html.twig', [
             'trick' => $trick,
             'form' => $form->createView()
         ]);

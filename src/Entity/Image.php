@@ -10,6 +10,9 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Image
 {
+    const DEFAULT_PICTURE = 'home.jpg';
+    const DEFAULT_ALT = 'Image of snowboard trick';
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -20,13 +23,10 @@ class Image
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Trick", inversedBy="images")
      * @ORM\JoinColumn(nullable=false)
-     * @Assert\Valid
      */
     private $trick;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="Please, upload the file as an image type file.")
      * @Assert\File(
      *     mimeTypes={"image/jpeg", "image/png"},
      *     maxSize = "16M"
@@ -49,6 +49,11 @@ class Image
      * @ORM\JoinColumn(nullable=false)
      */
     private $author;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $name;
     
 
     public function getId()
@@ -112,6 +117,18 @@ class Image
     public function setAuthor(?User $author): self
     {
         $this->author = $author;
+
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
 
         return $this;
     }
