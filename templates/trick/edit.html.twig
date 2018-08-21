@@ -68,8 +68,7 @@
 
 						{% if app.user is not same as(form.vars.data.author) %}
 							{% for item in [form.name, form.description, form.categories] %}
-								{{ form_row(item, { attr: { 'readonly': true, 'class': "form-control-plaintext"}, 
-								choice_attr: { 'disabled': 'disabled' } }) }}
+								{{ form_row(item, { 'disabled': true  }) }}
 							{% endfor %}
 						{% else %}	
 							{{ form_row(form.name) }}

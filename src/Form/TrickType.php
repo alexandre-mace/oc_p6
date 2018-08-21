@@ -39,7 +39,8 @@ class TrickType extends AbstractType
                 'class' => Category::class,
                 'choice_label' => 'name',
                 'expanded' => true,
-                'multiple' => true
+                'multiple' => true,
+                'disabled' => true
             ))
             ->addEventListener(
                 FormEvents::SUBMIT,

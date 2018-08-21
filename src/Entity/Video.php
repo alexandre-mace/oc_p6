@@ -3,10 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-<<<<<<< HEAD
 use Symfony\Component\Validator\Constraints as Assert;
-=======
->>>>>>> 6499792091b6081ccd910e0866c1fd0d2de82a80
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\VideoRepository")
