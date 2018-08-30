@@ -20,19 +20,16 @@ class CommentController extends Controller
      * @Route("/trick/{slug}/add", name="comment_add")
      * @Security("is_granted('ROLE_USER')")     
      */
-    public function add(Request $request, EntityManagerInterface $manager, Trick $trick)
+    public function add(Request $request, EntityManagerInterface $manager, Comment $comment)
     {
-        $trick = $manager->getRepository(Trick::class)->findBySlug($trick->getSlug());
-
         $comment = new Comment($trick);
         $form = $this->createForm(CommentType::class, $comment)->handleRequest($request);;
         if ($form->isSubmitted() && $form->isValid()) {
             $manager->persist($form->getData());
             $manager->flush();
-            $this->addFlash('notice', 'The new comment has been added !');
+            $this->addFlash('info', 'The new comment has been added !');
             return $this->redirectToRoute('trick_show', array('slug' => $trick->getSlug()));
         }
-                
         return $this->render('trick/view.html.twig', [
             'trick' => $trick,
             'form' => $form->createView()

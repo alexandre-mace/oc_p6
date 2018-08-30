@@ -58,7 +58,7 @@ class Trick
     private $videos;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Category", inversedBy="tricks")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Category", inversedBy="tricks", cascade={"persist"})
      */
     private $categories;
 
@@ -80,8 +80,8 @@ class Trick
     private $mainImage;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\User")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=true)
      */
     private $author;
 

@@ -37,16 +37,12 @@ class Image
     /**
      * @ORM\Column(type="boolean")
      */
-    private $main;
+    private $main = false;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $alt = 'Image of snowboard trick';
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="images")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $author;
 
@@ -93,18 +89,6 @@ class Image
     public function setMain(bool $main): self
     {
         $this->main = $main;
-
-        return $this;
-    }
-
-    public function getAlt(): ?string
-    {
-        return $this->alt;
-    }
-
-    public function setAlt(string $alt): self
-    {
-        $this->alt = $alt;
 
         return $this;
     }

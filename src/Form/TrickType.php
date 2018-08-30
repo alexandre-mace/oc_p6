@@ -15,9 +15,18 @@ use App\Entity\Trick;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
 class TrickType extends AbstractType
 {
+    private $tokenStorage;
+
+    public function __construct(TokenStorageInterface $tokenStorage)
+    {
+        $this->tokenStorage = $tokenStorage;
+    }
+
+
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
@@ -39,9 +48,19 @@ class TrickType extends AbstractType
                 'class' => Category::class,
                 'choice_label' => 'name',
                 'expanded' => true,
-                'multiple' => true,
-                'disabled' => true
+                'multiple' => true
             ))
+            ->addEventListener(FormEvents::PRE_SET_DATA, function(FormEvent $event) {
+                $trick = $event->getData();
+                $form = $event->getForm();
+
+                $user = $this->tokenStorage->getToken()->getUser();
+                if($trick && $user !== $trick->getAuthor()) {
+                    $form->remove('name');
+                    $form->remove('description');
+                    $form->remove('categories');
+                }
+            })
             ->addEventListener(
                 FormEvents::SUBMIT,
                 array($this, 'onSubmit')

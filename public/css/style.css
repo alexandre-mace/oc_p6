@@ -14,6 +14,9 @@ nav {
 .r-0 {
   right: 0;
 }
+footer {
+  z-index: -1 !important;
+}
 .header {
   height: 100vh;
   -webkit-background-size: cover;
@@ -58,15 +61,24 @@ nav {
   height: auto;
 }
 
-.flash-notice {
+.flash {
   z-index: 1;
   position: absolute;
   top: 8em;
-  align-self: center;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: max-content;
 }
 
 .edit_delete {
   position: absolute;
   right: 0;
   top: 8em;
+}
+.avatar {
+  max-height: 100px;
+  max-width: 100px;
+  text-align: center;
 }

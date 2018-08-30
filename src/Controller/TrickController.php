@@ -33,12 +33,6 @@ class TrickController extends Controller
      */
     public function show(EntityManagerInterface $manager, Trick $trick)
     {
-        $trick = $manager->getRepository(Trick::class)->findBySlug($trick->getSlug());
-
-        if ($trick === null)
-        {
-            throw new NotFoundHttpException("The trick you are looking for doesnt exist.");
-        }  
         $form = $this->createForm(CommentType::class);
         return $this->render('trick/view.html.twig', [
             'trick' => $trick,
@@ -56,7 +50,7 @@ class TrickController extends Controller
 	    if ($form->isSubmitted() && $form->isValid()) {
 	        $manager->persist($form->getData());
 	        $manager->flush();
-            $this->addFlash('notice', 'The new trick has been added !');
+            $this->addFlash('info', 'The new trick has been added !');
 	        return $this->redirectToRoute('trick_index');
 	    }
 	    return $this->render('trick/add.html.twig', array(
@@ -73,7 +67,7 @@ class TrickController extends Controller
         $form = $this->createForm(TrickType::class, $trick)->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $manager->flush();
-            $this->addFlash('notice', 'The trick has been updated !');
+            $this->addFlash('info', 'The trick has been updated !');
             return $this->redirectToRoute('trick_index');
         }
         return $this->render('trick/edit.html.twig', array(
@@ -84,7 +78,6 @@ class TrickController extends Controller
 
     /**
      * @Route("/delete/{slug}", name="trick_delete")
-     * @Security("is_granted('ROLE_USER')")          
      */
     public function delete(Request $request, EntityManagerInterface $manager, Trick $trick)
     {
@@ -92,7 +85,7 @@ class TrickController extends Controller
         $trick->setMainImage(null);
 	    $manager->remove($trick);
 		$manager->flush();
-        $this->addFlash('notice', 'The trick has been successfully deleted !');
+        $this->addFlash('info', 'The trick has been successfully deleted !');
 	    return $this->redirectToRoute('trick_index');
 	}
 

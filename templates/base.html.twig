@@ -33,17 +33,24 @@
                             <a class="nav-link" href="{{ path('trick_index') }}">Home<span class="sr-only">(current)</span></a>
                         </li>
                         <li>
-                            <a class="btn btn-outline-secondary mx-lg-2 my-md-1 my-lg-0" href="{{ path('login') }}">Sign in</a>
+                            <a class="btn btn-outline-secondary mx-lg-2 my-md-1 my-lg-0" href="{{ path('security_login') }}">Sign in</a>
                         </li>
                         <li>
-                            <a class="btn btn-outline-success mx-lg-2 my-md-1 my-lg-0" href="{{ path('user_registration') }}">Sign up</a>
+                            <a class="btn btn-outline-success mx-lg-2 my-md-1 my-lg-0" href="{{ path('security_register') }}">Sign up</a>
                         </li>
                     </ul>
                 </div>
             </nav>
         {% endblock %}
 
-        
+        {% for type, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="flash alert alert-{{ type }}" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+
         {% block header %}{% endblock %}
 
         <div class="container">

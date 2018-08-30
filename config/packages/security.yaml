@@ -16,8 +16,8 @@ security:
         main:
             anonymous: true
             form_login:
-                login_path: login
-                check_path: login            
+                login_path: security_login
+                check_path: security_login            
                 csrf_token_generator: security.csrf.token_manager     
             provider: our_db_provider                           
 

@@ -24,8 +24,8 @@ class AppExtension extends AbstractExtension
         if ($trick->getMainImage()) {
             return 'uploads/images/' . $trick->getMainImage()->getName();
         } 
-        elseif ($trick->getImages()) {
-            return 'uploads/images/' . array_shift(array_slice($trick->getImages(), 0, 1))->getName();
+        elseif ($trick->getImages()->first()) {
+            return 'uploads/images/' . $trick->getImages()->first()->getName();
         }
         return ('../../images/' . Image::DEFAULT_PICTURE);
     }

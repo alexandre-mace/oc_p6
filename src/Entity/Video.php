@@ -31,6 +31,12 @@ class Video
      */
     private $url;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="videos", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $author;
+
     public function getId()
     {
         return $this->id;
@@ -57,6 +63,18 @@ class Video
     public function setUrl(string $url): self
     {
         $this->url = $url;
+
+        return $this;
+    }
+
+    public function getAuthor(): ?User
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(?User $author): self
+    {
+        $this->author = $author;
 
         return $this;
     }

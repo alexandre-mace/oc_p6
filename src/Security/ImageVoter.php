@@ -38,20 +38,20 @@ class ImageVoter extends Voter
             return false;
         }
 
-        $trick = $subject;
+        $image = $subject;
 
         switch ($attribute) {
             case self::EDIT:
-                return $this->hasRight($trick, $user);
+                return $this->hasRight($image, $user);
             case self::DELETE:
-                return $this->hasRight($trick, $user);
+                return $this->hasRight($image, $user);
         }
 
         throw new \LogicException('This code should not be reached!');
     }
 
-    private function hasRight(Image $trick, User $user)
+    private function hasRight(Image $image, User $user)
     {
-        return $user === $trick->getAuthor();
+        return $user === $image->getAuthor();
     }
 }

@@ -8,12 +8,6 @@
             <div class="row h-100">
                 <div class="col d-flex flex-column">
                     
-                    {% for message in app.flashes('notice') %}
-                        <div class="flash-notice alert alert-info">
-                            {{ message }}
-                        </div>
-                    {% endfor %}
-
 
                     <div class="jumbotron my-auto">
                         <h1 class="display-4">Welcome on SnowTricks !</h1>
@@ -53,9 +47,9 @@
                             <a href="{{ path('trick_update', {'slug': trick.slug}) }}">
                                 <i class="fas fa-edit"></i>
                             </a>
-                            {% if app.user is same as(trick.author) %}
+                            {% if is_granted('delete', trick) %}
                                 <div class="mx-2"></div>
-                                <a href="{{ path('trick_delete', {'slug': trick.slug}) }}">
+                                <a href="{{ path('trick_delete', {'slug': trick.slug}) }}" data-confirm="Are you sure you want to delete this trick ?">
                                     <i class="fas fa-trash-alt"></i>    
                                 </a>
                             {% endif %}

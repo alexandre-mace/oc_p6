@@ -7,8 +7,8 @@
         <div class="row">
             <div class="col d-flex">
                 <div class="jumbotron my-auto">
-                    <h1 class="display-4">Sign up</h1>
-                    <p>Fill the form below to register</p>
+                    <h1 class="display-4">Sign in</h1>
+                    <p>Fill the form below to login</p>
                 </div>    
             </div>
         </div>
@@ -24,7 +24,7 @@
                 <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
             {% endif %}
 
-            <form action="{{ path('login') }}" method="post">
+            <form action="{{ path('security_login') }}" method="post">
                 <div class="form-group">
                     <label for="username">Username:</label>
                     <input class="form-control" type="text" id="username" name="_username" value="{{ last_username }}" />
@@ -41,6 +41,12 @@
 
                 <button type="submit" class=" btn btn-primary">login</button>
             </form>
+
+            <div class="mt-4">
+                <a class="mt-4" href="{{ path('security_register') }}">Register</a>
+                <br>
+                <a href="{{ path('security_forgot-password') }}">Forgot password ?</a>
+            </div>
           
         </div>
     </div>
