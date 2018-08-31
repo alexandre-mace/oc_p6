@@ -20,8 +20,7 @@ class Comment
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User")
-     * @ORM\JoinColumn(nullable=false)
-     * @Assert\Valid 
+     * @ORM\JoinColumn(nullable=true)
      */
     private $author;
 

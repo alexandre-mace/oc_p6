@@ -9,10 +9,12 @@
                 <div class="col d-flex flex-column">
                     
 
-                    <div class="jumbotron my-auto">
-                        <h1 class="display-4">Welcome on SnowTricks !</h1>
-                        <p class="lead">SnowTricks is a snowboard tricks presentation website with a lovely community.</p>
-                        <a class="btn btn-outline-dark btn-lg" href="#last_tricks" role="button" id="button-scrolling">Discover all tricks</a>
+                    <div class="jumbotron jumbotron-fluid my-auto">
+                        <div class="container">
+                            <h1 class="display-5">Welcome on SnowTricks !</h1>
+                            <p class="lead">SnowTricks is a snowboard tricks presentation website with a lovely community.</p>
+                            <a class="btn btn-outline-dark btn-lg" href="#last_tricks" role="button" id="button-scrolling">Discover all tricks</a>
+                        </div>
                     </div>    
 
                     <a id="arrow-scroll-bottom" href="#last_tricks" class="mr-3">
@@ -30,7 +32,7 @@
 
     <h1  id="last_tricks" class="my-5 text-center">Last tricks</h1>
 
-    <div class="row text-center text-lg-left">
+    <div class="row text-center text-lg-left mb-4">
 
         {% for trick in tricks %}        
             <div class="col-lg-4 col-md-6">

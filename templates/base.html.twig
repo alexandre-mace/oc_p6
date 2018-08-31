@@ -15,31 +15,46 @@
     <body>
 
         {% block navigation %}
-            <nav class="navbar navbar-expand-lg navbar-light bg-light w-100 position-absolute">
+            <!-- MAIN NAV BAR -->
+            <nav class="d-none d-sm-flex navbar navbar-light bg-light w-100 position-absolute">
                 <a class="navbar-brand" href="/">SnowTricks
-
                     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                         - Hi {{ app.user.username }} !
                         <a class="btn btn-outline-danger mr-auto" href="/logout">Log out</a>
                     {% endif %}
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="{{ path('trick_index') }}">Home<span class="sr-only">(current)</span></a>
+                
+                <ul class="navbar-nav ml-auto flex-row">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ path('trick_index') }}">Home<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li>
+                        <a class="btn btn-outline-secondary mx-2" href="{{ path('security_login') }}">Sign in</a>
+                    </li>
+                    <li>
+                        <a class="btn btn-outline-success mx-2" href="{{ path('security_register') }}">Sign up</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- MOBILE NAV BAR -->
+            <nav class="d-flex d-sm-none navbar bg-light w-100 fixed-bottom">
+                <ul class="navbar-nav flex-row w-100">
+                    <li class="nav-item m-auto">
+                        <a class="nav-link" href="{{ path('trick_index') }}"><i class="fas fa-home"></i></a>
+                    </li>
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                        <li class="m-auto">
+                            Hi {{ app.user.username }} ! <i class="fas fa-smile"></i>
+                        </li>               
+                        <li class="nav-item m-auto">
+                            <a class="nav-link" href="/logout"><i class="fas fa-sign-out-alt"></i></a>
                         </li>
-                        <li>
-                            <a class="btn btn-outline-secondary mx-lg-2 my-md-1 my-lg-0" href="{{ path('security_login') }}">Sign in</a>
+                    {% else %}
+                        <li class="nav-item m-auto">
+                            <a class="nav-link" href="{{ path('security_login') }}"><i class="fas fa-sign-in-alt"></i></a>
                         </li>
-                        <li>
-                            <a class="btn btn-outline-success mx-lg-2 my-md-1 my-lg-0" href="{{ path('security_register') }}">Sign up</a>
-                        </li>
-                    </ul>
-                </div>
+                    {% endif %}
+                </ul>
             </nav>
         {% endblock %}
 
@@ -60,7 +75,7 @@
         {% block footer %}
             <footer>
                 <div class="container">
-                    <div class="row mt-5 pt-2">
+                    <div class="row mt-5 pt-5">
                         <div class="col">
                             <p class="text-center">SnowTricks, all rights reserved <i class="far fa-copyright"></i> 2018</p>
                         </div>

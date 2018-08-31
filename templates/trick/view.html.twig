@@ -9,11 +9,11 @@
                 <div class="col d-flex flex-column">
 
                     {% if is_granted('ROLE_USER') %}
-	                	<div class="edit_delete d-flex justify-content-center my-3">
+	                	<div class="edit_delete d-flex justify-content-center my-3 mr-2">
 	                        <a href="{{ path('trick_update', {'slug': trick.slug}) }}">
 	                            <i class="fas fa-edit fa-2x"></i>
 	                        </a>
-	                        {% if is_granted('edit', trick) %}
+	                        {% if is_granted('delete', trick) %}
 	                        	<div class="mx-2"></div>
                                 <a href="{{ path('trick_delete', {'slug': trick.slug}) }}" data-confirm="Are you sure you want to delete this trick ?">
                                     <i class="fas fa-trash-alt fa-2x"></i>    
@@ -41,13 +41,13 @@
 
 	<div id="trick" class="row pt-5 trick">
         {% for image in trick.images %}
-			<div class="col">
+			<div class="col-md-3 p-2 text-center">
 				<img class="showImg" src="{{ asset('uploads/images/' ~ image.name) }}">
 			</div>
 		{% endfor %}	
         {% for video in trick.videos %}
-			<div class="col">
-				<iframe class="showVideo" src="{{ video.url }}" frameborder="0" allowfullscreen></iframe>
+			<div class="col-md-3 p-2 text-center d-flex">
+				<iframe class="showVideo m-auto" src="{{ video.url }}" frameborder="0" allowfullscreen></iframe>
 			</div>
 		{% endfor %}								
 	</div>
@@ -74,13 +74,13 @@
 	{% for comment in trick.comments %}
 		<hr>
 		<div class="row">
-			<div class="col-2">
+			<div class="col-md-2">
 				<div class="d-flex flex-column">
-					<p class="text-center">{{ comment.author.username }}</p>
-					<img class="avatar mx-auto" src="{{ asset('uploads/images/' ~ comment.author.avatar.name) }}" alt ="{{ constant('App\\Entity\\Avatar::DEFAULT_ALT') }}">
+					<p class="mx-md-auto">{{ comment.author.username }}</p>
+					<img class="avatar mx-md-auto mb-sm-2" src="{{ asset('uploads/images/' ~ comment.author.avatar.name) }}" alt ="{{ constant('App\\Entity\\Avatar::DEFAULT_ALT') }}">
 				</div>
 			</div>
-			<div class="col-10">
+			<div class="col-md-10">
 				<div class="d-flex flex-column">
 					<p>{{ comment.addedAt|date('Y-m-d H:i:s') }}</p>
 					<p>{{ comment.content }}</p>

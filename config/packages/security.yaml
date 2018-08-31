@@ -19,7 +19,8 @@ security:
                 login_path: security_login
                 check_path: security_login            
                 csrf_token_generator: security.csrf.token_manager     
-            provider: our_db_provider                           
+            provider: our_db_provider   
+            user_checker: App\Security\UserChecker                        
 
             # activate different ways to authenticate
 

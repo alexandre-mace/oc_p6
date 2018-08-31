@@ -92,6 +92,7 @@ class AppFixtures extends Fixture
             $comment->setContent('hello, nice trick');
             $comment->setAuthor($userA);
 
+            $manager->persist($comment);
             $manager->persist($trick);
 
         }

@@ -46,7 +46,7 @@ function readURL(input, index) {
   }
 }
 $("body").on("change", ".uploadImg", function(){
-	index = $(this).attr('data-rel')
+	index = $(this).attr('data-img')
 	readURL(this, index);
 });
 
@@ -71,6 +71,7 @@ $(function() {
   });
 });
 
+// ajax upload
 $(function () {
   $("body").on("change", ".file", function () {
     var $input = $($(this).data("rel"));
