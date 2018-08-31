@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\VideoRepository")
@@ -17,116 +19,27 @@ class Video
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
-     */
-    private $width;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $height;
-
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $controls;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $src;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $type;
-
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $autoplay;
-
-    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Trick", inversedBy="videos")
      * @ORM\JoinColumn(nullable=false)
+     * @Assert\Valid
      */
     private $trick;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Assert\Url()
+     */
+    private $url;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="videos", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $author;
 
     public function getId()
     {
         return $this->id;
-    }
-
-    public function getWidth(): ?int
-    {
-        return $this->width;
-    }
-
-    public function setWidth(int $width): self
-    {
-        $this->width = $width;
-
-        return $this;
-    }
-
-    public function getHeight(): ?int
-    {
-        return $this->height;
-    }
-
-    public function setHeight(int $height): self
-    {
-        $this->height = $height;
-
-        return $this;
-    }
-
-    public function getControls(): ?bool
-    {
-        return $this->controls;
-    }
-
-    public function setControls(bool $controls): self
-    {
-        $this->controls = $controls;
-
-        return $this;
-    }
-
-    public function getSrc(): ?string
-    {
-        return $this->src;
-    }
-
-    public function setSrc(string $src): self
-    {
-        $this->src = $src;
-
-        return $this;
-    }
-
-    public function getType(): ?string
-    {
-        return $this->type;
-    }
-
-    public function setType(string $type): self
-    {
-        $this->type = $type;
-
-        return $this;
-    }
-
-    public function getAutoplay(): ?bool
-    {
-        return $this->autoplay;
-    }
-
-    public function setAutoplay(bool $autoplay): self
-    {
-        $this->autoplay = $autoplay;
-
-        return $this;
     }
 
     public function getTrick(): ?Trick
@@ -137,6 +50,31 @@ class Video
     public function setTrick(?Trick $trick): self
     {
         $this->trick = $trick;
+
+
+        return $this;
+    }
+
+    public function getUrl(): ?string
+    {
+        return $this->url;
+    }
+
+    public function setUrl(string $url): self
+    {
+        $this->url = $url;
+
+        return $this;
+    }
+
+    public function getAuthor(): ?User
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(?User $author): self
+    {
+        $this->author = $author;
 
         return $this;
     }

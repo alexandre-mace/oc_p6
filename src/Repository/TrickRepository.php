@@ -31,20 +31,17 @@ class TrickRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    /*
-    public function findByExampleField($value)
+    
+    public function findBySlug($slug)
     {
         return $this->createQueryBuilder('t')
-            ->andWhere('t.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('t.id', 'ASC')
-            ->setMaxResults(10)
+            ->andWhere('t.slug = :slug')
+            ->setParameter('slug', $slug)
             ->getQuery()
-            ->getResult()
+            ->getOneOrNullResult()
         ;
     }
-    */
-
+    
     /*
     public function findOneBySomeField($value): ?Trick
     {

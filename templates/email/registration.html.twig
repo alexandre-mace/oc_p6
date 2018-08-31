@@ -1,0 +1,10 @@
+{# templates/email/registration.html.twig #}
+<h3>Welcome on SnowTricks {{ user.username }} !</h3>
+
+Validate your account : <a href="{{ url('security_confirm', {'confirmationToken': user.confirmationToken}) }}">Validate</a>
+<br>
+<br>
+Thanks!
+
+{# Makes an absolute URL to the /images/logo.png file #}
+<img src="{{ absolute_url(asset('images/home.jpg')) }}">

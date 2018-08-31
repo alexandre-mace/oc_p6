@@ -9,6 +9,7 @@ use App\Entity\Comment;
 use App\Entity\Image;
 use App\Entity\Trick;
 use App\Entity\User;
+use App\Entity\Avatar;
 use App\Entity\Video;
 
 
@@ -24,29 +25,50 @@ class AppFixtures extends Fixture
 
         $singletonCategories = [];
 
+
+
+        $userA = new User;
+        $avatarA = new Avatar;
+        $avatarA->setName('mute_1.jpg');
+        $avatarA->setUser($userA);
+        $userA->setUsername('a');
+        $userA->setEmail('oc.alexandremace@gmail.com');
+        $userA->setAvatar($avatarA);
+        $userA->setIsActive(true);
+        $userA->setPlainPassword('alexandre');
+
+
+        $userB = new User;
+        $avatarB = new Avatar;
+        $avatarB->setName('mute_1.jpg');
+        $avatarB->setUser($userB);
+        $userB->setUsername('b');
+        $userB->setEmail('alex-mace@hotmail.fr');
+        $userB->setAvatar($avatarB);
+        $userB->setIsActive(true);
+        $userB->setPlainPassword('alexandre');
+    
+        $manager->persist($userB);
+
+
         foreach ($data['tricks'] as $trickarray => $trickdata) {
             $trick = new Trick();
             foreach ($trickdata['images'] as $image => $imagedata) {
-                $imagedata['alt'] = 'Photo de la figure ' . $trickdata['name'] . ' de snowboard.';
 
                 $objectImage = new Image();
-                $objectImage->setSrc($imagedata['src']);
-                $objectImage->setAlt($imagedata['alt']);
+                $objectImage->setName($imagedata['name']);
                 $objectImage->setTrick($trick);
+                $objectImage->setAuthor($userA);
 
                 $trick->addImage($objectImage);
             }
 
-            foreach ($trickdata['videos'] as $videoarray => $videodata) {
+            foreach ($trickdata['videos'] as $video => $videodata) {
 
                 $objectVideo = new Video();
-                $objectVideo->setWidth($videodata['width']);
-                $objectVideo->setHeight($videodata['height']);
-                $objectVideo->setControls($videodata['controls']);
-                $objectVideo->setSrc($videodata['src']);
-                $objectVideo->setType($videodata['type']);
-                $objectVideo->setAutoplay($videodata['autoplay']);
+                $objectVideo->setUrl($videodata);
                 $objectVideo->setTrick($trick);
+                $objectVideo->setAuthor($userA);
 
                 $trick->addVideo($objectVideo);
             }
@@ -61,10 +83,16 @@ class AppFixtures extends Fixture
                 $trick->addCategory($objectCategory);
             }
 
+            $trick->setAuthor($userA);
             $trick->setName($trickdata['name']);
             $trick->setDescription($trickdata['description']);
             $trick->setAddedAt(new \datetime());
 
+            $comment = new Comment($trick);
+            $comment->setContent('hello, nice trick');
+            $comment->setAuthor($userA);
+
+            $manager->persist($comment);
             $manager->persist($trick);
 
         }

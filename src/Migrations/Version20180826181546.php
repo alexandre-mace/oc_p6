@@ -8,14 +8,14 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20180626100935 extends AbstractMigration
+final class Version20180826181546 extends AbstractMigration
 {
     public function up(Schema $schema) : void
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE trick ADD added_at DATETIME NOT NULL');
+        $this->addSql('ALTER TABLE app_users ADD is_active TINYINT(1) NOT NULL, ADD confirmation_token VARCHAR(255) DEFAULT NULL');
     }
 
     public function down(Schema $schema) : void
@@ -23,6 +23,6 @@ final class Version20180626100935 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE trick DROP added_at');
+        $this->addSql('ALTER TABLE app_users DROP is_active, DROP confirmation_token');
     }
 }

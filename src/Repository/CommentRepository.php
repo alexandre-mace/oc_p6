@@ -22,19 +22,17 @@ class CommentRepository extends ServiceEntityRepository
 //    /**
 //     * @return Comment[] Returns an array of Comment objects
 //     */
-    /*
-    public function findByExampleField($value)
+
+    public function findByTrick($trick)
     {
         return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('c.id', 'ASC')
-            ->setMaxResults(10)
+            ->andWhere('c.trick = :trick')
+            ->setParameter('trick', $trick)
+            ->orderBy('c.addedAt', 'DESC')
             ->getQuery()
             ->getResult()
         ;
     }
-    */
 
     /*
     public function findOneBySomeField($value): ?Comment

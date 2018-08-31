@@ -5,9 +5,14 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\TrickRepository")
+ * @UniqueEntity("name")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Trick
 {
@@ -19,27 +24,36 @@ class Trick
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, unique=true)
+     * @Assert\NotBlank()
      */
     private $name;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\Length(
+     *     min = 20
+     * )
      */
     private $description;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Comment", mappedBy="trick", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\Comment", mappedBy="trick", orphanRemoval=true, cascade={"persist"})
+     * @Assert\NotBlank()
+     * @Assert\Valid     
      */
     private $comments;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Image", mappedBy="trick", orphanRemoval=true, cascade={"persist"})
+     * @ORM\JoinColumn(onDelete="CASCADE")
+     * @Assert\Valid
      */
     private $images;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Video", mappedBy="trick", orphanRemoval=true, cascade={"persist"})
+     * @Assert\Valid
      */
     private $videos;
 
@@ -50,8 +64,26 @@ class Trick
 
     /**
      * @ORM\Column(type="datetime")
+     * @Assert\DateTime()   
      */
     private $addedAt;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $slug;
+
+    /**
+     * @ORM\joinColumn(name="main_image_id", nullable=true, onDelete="SET NULL")
+     * @ORM\OneToOne(targetEntity="App\Entity\Image", cascade={"persist", "remove"})
+     */
+    private $mainImage;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $author;
 
     public function __construct()
     {
@@ -209,15 +241,53 @@ class Trick
         return $this;
     }
 
-    public function getAddedAt(): ?\DateTimeInterface
+    public function getAddedAt()
     {
         return $this->addedAt;
     }
 
-    public function setAddedAt(\DateTimeInterface $addedAt): self
+    /**
+     * @ORM\PrePersist
+     */
+    public function setAddedAt()
     {
-        $this->addedAt = $addedAt;
+        $this->addedAt = new \DateTime();
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }
+
+    public function getMainImage(): ?Image
+    {
+        return $this->mainImage;
+    }
+
+    public function setMainImage(?Image $mainImage): self
+    {
+        $this->mainImage = $mainImage;
+
+        return $this;
+    }
+
+    public function getAuthor(): ?User
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(?User $author): self
+    {
+        $this->author = $author;
+
+        return $this;
+    }
+
 }

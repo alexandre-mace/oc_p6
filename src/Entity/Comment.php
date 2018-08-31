@@ -3,9 +3,11 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CommentRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Comment
 {
@@ -18,14 +20,15 @@ class Comment
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $author;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Assert\DateTime() 
      */
-    private $addetAt;
+    private $addedAt;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Trick", inversedBy="comments")
@@ -33,6 +36,14 @@ class Comment
      */
     private $trick;
 
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $content;
+
+    public function __construct(Trick $trick) {
+        $this->setTrick($trick);
+    }
     public function getId()
     {
         return $this->id;
@@ -50,14 +61,17 @@ class Comment
         return $this;
     }
 
-    public function getAddetAt(): ?\DateTimeInterface
+    public function getAddedAt(): ?\DateTimeInterface
     {
-        return $this->addetAt;
+        return $this->addedAt;
     }
 
-    public function setAddetAt(\DateTimeInterface $addetAt): self
+    /**
+     * @ORM\PrePersist
+     */
+    public function setAddedAt()
     {
-        $this->addetAt = $addetAt;
+        $this->addedAt = new \DateTime();
 
         return $this;
     }
@@ -70,6 +84,18 @@ class Comment
     public function setTrick(?Trick $trick): self
     {
         $this->trick = $trick;
+
+        return $this;
+    }
+
+    public function getContent(): ?string
+    {
+        return $this->content;
+    }
+
+    public function setContent(string $content): self
+    {
+        $this->content = $content;
 
         return $this;
     }
