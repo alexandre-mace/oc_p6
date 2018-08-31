@@ -5,12 +5,19 @@ $(function() {
     $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 800);
   });
 });
-// Bottom scrolling arrow
+// Top scrolling arrow
 $(function() {
   $('#arrow-scroll-top').on('click', function(e) {
     e.preventDefault();
     $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 800);
   });
+});
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 1800) {
+        $('#arrow-scroll-top').fadeIn();
+    } else {
+        $('#arrow-scroll-top').fadeOut();
+    }
 });
 // Button scrolling
 $(function() {
@@ -92,4 +99,19 @@ $(function () {
         }
     });
   });
+});
+
+// load more
+$(function () {
+    $(".loadItem").slice(0, 10).show();
+    $("#loadMore").on('click', function (e) {
+        e.preventDefault();
+        $(".loadItem:hidden").slice(0, 10).slideDown();
+        if ($(".loadItem:hidden").length == 0) {
+            $("#loadMore").fadeOut('slow');
+        }
+        $('html,body').animate({
+            scrollTop: $(this).offset().top
+        }, 1500);
+    });
 });

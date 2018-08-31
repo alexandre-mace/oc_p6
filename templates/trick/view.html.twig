@@ -72,21 +72,31 @@
 	{% endif %}
 
 	{% for comment in trick.comments %}
-		<hr>
-		<div class="row">
-			<div class="col-md-2">
-				<div class="d-flex flex-column">
-					<p class="mx-md-auto">{{ comment.author.username }}</p>
-					<img class="avatar mx-md-auto mb-sm-2" src="{{ asset('uploads/images/' ~ comment.author.avatar.name) }}" alt ="{{ constant('App\\Entity\\Avatar::DEFAULT_ALT') }}">
+		<div class="loadItem">
+			<hr>
+			<div class="row">
+				<div class="col-md-2">
+					<div class="d-flex flex-column">
+						<p class="mx-md-auto">{{ comment.author.username }}</p>
+						<img class="avatar mx-md-auto mb-sm-2" src="{{ asset('uploads/images/' ~ comment.author.avatar.name) }}" alt ="{{ constant('App\\Entity\\Avatar::DEFAULT_ALT') }}">
+					</div>
 				</div>
-			</div>
-			<div class="col-md-10">
-				<div class="d-flex flex-column">
-					<p>{{ comment.addedAt|date('Y-m-d H:i:s') }}</p>
-					<p>{{ comment.content }}</p>
+				<div class="col-md-10">
+					<div class="d-flex flex-column">
+						<p>{{ comment.addedAt|date('Y-m-d H:i:s') }}</p>
+						<p>{{ comment.content }}</p>
+					</div>
 				</div>
 			</div>
 		</div>
 	{% endfor %}
+
+    <div class="row">
+        <div class="col">
+            <div class="text-center">
+                <button id="loadMore" class="btn btn-outline-success btn-lg">See more</button>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}

@@ -1,7 +1,17 @@
 <div class="col-md-4 p-2" id="video-{{ form.vars.name }}">
     <div class="border p-2 w-100">
-		{{ form_row(form.url) }}
-		<iframe class="showVideo" src="{{ form.url.vars.data }}" frameborder="0" allowfullscreen></iframe>
-		<button type="button" class="btn btn-sm btn-danger btn-remove mt-3" data-rel="#video-{{ form.vars.name }}">Supprimer</button>
+
+   		{% if trick is not defined or video is not defined or is_granted('edit', form.vars.data) %}
+			{{ form_row(form.url, {'attr': {'required': 'required'}}) }}
+		{% endif %}
+
+		{% if video is defined %}
+			<iframe class="showVideo" src="{{ form.vars.data.url }}" frameborder="0" allowfullscreen></iframe>
+		{% endif %}
+
+		{% if trick is not defined or video is not defined or is_granted('edit', form.vars.data) %}
+			<button type="button" class="btn btn-sm btn-danger btn-remove mt-3" data-rel="#video-{{ form.vars.name }}">Supprimer</button>
+		{% endif %}
+
 	</div>
 </div>

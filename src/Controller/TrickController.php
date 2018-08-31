@@ -24,7 +24,7 @@ class TrickController extends Controller
     public function index(EntityManagerInterface $manager)
     {
         return $this->render('trick/index.html.twig', [
-        	'tricks' => $manager->getRepository(Trick::class)->getTricks(15)
+        	'tricks' => $manager->getRepository(Trick::class)->getTricks()
         ]);
     }
 
