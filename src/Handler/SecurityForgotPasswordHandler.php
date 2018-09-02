@@ -3,7 +3,9 @@
 namespace App\Handler;
 
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Form\FormInterface;
+use App\Entity\User;
 
 class SecurityForgotPasswordHandler
 {
@@ -20,16 +22,17 @@ class SecurityForgotPasswordHandler
         if ($form->isSubmitted() && $form->isValid()) {
             $username = $form->getData()['username'] ?? '';
             
-            $user = $this->getDoctrine()
+            $user = $this->manager
                 ->getRepository(User::class)
                 ->findOneByUsername($username);
             
-            if($user === null) {
-                throw new NotFoundHttpException('No user correspond to this username.');
+            if($user) {
+                $user->setResetToken('1');
+                $this->manager->flush();
+                return $user;
             }
-            $user->setResetToken('1');
-            $this->manager->flush();
-            return true;
+            throw new NotFoundHttpException("No user correspond to this username.");
+            
         }
 
         return false;

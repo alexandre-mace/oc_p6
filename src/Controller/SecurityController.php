@@ -14,6 +14,7 @@ use App\Form\ResetPasswordType;
 use App\Entity\User;
 use App\Handler\SecurityRegisterHandler;
 use App\Handler\SecurityConfirmHandler;
+use App\Handler\SecurityForgotPasswordHandler;
 use App\Handler\SecurityResetPasswordHandler;
 
 
@@ -66,22 +67,11 @@ class SecurityController extends Controller
     /**
      * @Route("/forgot-password", name="security_forgot-password")
      */
-    public function forgotPassword(Request $request, EntityManagerInterface $manager)
+    public function forgotPassword(Request $request, EntityManagerInterface $manager, SecurityForgotPasswordHandler $handler)
     {
         $form = $this->createForm(ForgotPasswordType::class)->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-
-            $username = $form->getData()['username'] ?? '';
-            
-            $user = $this->getDoctrine()
-                ->getRepository(User::class)
-                ->findOneByUsername($username);
-            if($user === null) {
-                throw new NotFoundHttpException('No user correspond to this username.');
-            }
-
-            $user->setResetToken('1');
-            $manager->flush();
+        $user = $handler->handle($form);
+        if ($user instanceof User) {
             $this->addFlash('info', 'We\'ve just sent you an email to reset your password !');
             return $this->redirectToRoute('trick_index');
         }

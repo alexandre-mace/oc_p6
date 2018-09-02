@@ -79,7 +79,7 @@ class TrickController extends Controller
     /**
      * @Route("/delete/{slug}", name="trick_delete")
      */
-    public function delete(Request $request, Trick $trick, TrickDeleteHandler $handler)
+    public function delete(Trick $trick, TrickDeleteHandler $handler)
     {
         $this->denyAccessUnlessGranted('delete', $trick);
         $handler->handle($trick);

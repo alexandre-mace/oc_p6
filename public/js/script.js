@@ -1,29 +1,29 @@
 // Bottom scrolling arrow
 $(function() {
-  $('#arrow-scroll-bottom').on('click', function(e) {
+  $("#arrow-scroll-bottom").on("click", function(e) {
     e.preventDefault();
-    $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 800);
+    $("html, body").animate({ scrollTop: $($(this).attr('href')).offset().top}, 800);
   });
 });
 // Top scrolling arrow
 $(function() {
-  $('#arrow-scroll-top').on('click', function(e) {
+  $("#arrow-scroll-top").on("click", function(e) {
     e.preventDefault();
-    $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 800);
+    $("html, body").animate({ scrollTop: $($(this).attr('href')).offset().top}, 800);
   });
 });
 $(window).scroll(function () {
     if ($(this).scrollTop() > 1800) {
-        $('#arrow-scroll-top').fadeIn();
+        $("#arrow-scroll-top").fadeIn();
     } else {
-        $('#arrow-scroll-top').fadeOut();
+        $("#arrow-scroll-top").fadeOut();
     }
 });
 // Button scrolling
 $(function() {
-  $('#button-scrolling').on('click', function(e) {
+  $("#button-scrolling").on("click", function(e) {
     e.preventDefault();
-    $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 800);
+    $("html, body").animate({ scrollTop: $($(this).attr('href')).offset().top}, 800);
   });
 });
 
@@ -53,26 +53,26 @@ function readURL(input, index) {
   }
 }
 $("body").on("change", ".uploadImg", function(){
-	index = $(this).attr('data-img')
+	index = $(this).attr("data-img")
 	readURL(this, index);
 });
 
 // Make the checkbox for main image choice unique
-$('body').on('change', '.uniqCheckbox', function() {
-    $('.uniqCheckbox').not(this).prop('checked', false);  
+$("body").on("change", ".uniqCheckbox", function() {
+    $(".uniqCheckbox").not(this).prop("checked", false);  
 });
 
 // Modal confirmation on delete
 $(function() {
-  $('a[data-confirm]').click(function(ev) {
+  $("a[data-confirm]").click(function(ev) {
     var href = $(this).attr('href');
     
-    if (!$('#dataConfirmModal').length) {
-      $('body').append('<div id="dataConfirmModal" class="modal" tabindex="-1" role="dialog"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Please confirm</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body"></div><div class="modal-footer"><button type="button" class="btn" data-dismiss="modal">No</button><a class="btn btn-danger" id="dataConfirmOK">Yes</a></div></div></div></div>');
+    if (!$("#dataConfirmModal").length) {
+      $("body").append('<div id="dataConfirmModal" class="modal" tabindex="-1" role="dialog"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Please confirm</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body"></div><div class="modal-footer"><button type="button" class="btn" data-dismiss="modal">No</button><a class="btn btn-danger" id="dataConfirmOK">Yes</a></div></div></div></div>');
     }
-    $('#dataConfirmModal').find('.modal-body').text($(this).attr('data-confirm'));
-    $('#dataConfirmOK').attr('href', href);
-    $('#dataConfirmModal').modal({show:true});
+    $("#dataConfirmModal").find(".modal-body").text($(this).attr('data-confirm'));
+    $("#dataConfirmOK").attr("href", href);
+    $("#dataConfirmModal").modal({show:true});
     
     return false;
   });
