@@ -67,7 +67,7 @@ class SecurityController extends Controller
     /**
      * @Route("/forgot-password", name="security_forgot-password")
      */
-    public function forgotPassword(Request $request, EntityManagerInterface $manager, SecurityForgotPasswordHandler $handler)
+    public function forgotPassword(Request $request, SecurityForgotPasswordHandler $handler)
     {
         $form = $this->createForm(ForgotPasswordType::class)->handleRequest($request);
         $user = $handler->handle($form);

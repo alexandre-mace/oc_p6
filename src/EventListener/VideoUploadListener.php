@@ -14,7 +14,7 @@ class VideoUploadListener
 {
     private $uploader;
 
-    public function __construct(YoutubeLinkUploader $uploader, Security $security)
+    public function __construct(YoutubeLinkUploader $uploader)
     {
         $this->uploader = $uploader;
     }
