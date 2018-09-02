@@ -53,7 +53,7 @@ class AppFixtures extends Fixture
 
         foreach ($data['tricks'] as $trickdata) {
             $trick = new Trick();
-            foreach ($trickdata['images'] as $image => $imagedata) {
+            foreach ($trickdata['images'] as $imagedata) {
 
                 $objectImage = new Image();
                 $objectImage->setName($imagedata['name']);
