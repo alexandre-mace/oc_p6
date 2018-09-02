@@ -51,9 +51,9 @@ class AppFixtures extends Fixture
         $manager->persist($userB);
 
 
-        foreach ($data['tricks'] as $trickarray => $trickdata) {
+        foreach ($data['tricks'] as $trickdata) {
             $trick = new Trick();
-            foreach ($trickdata['images'] as $image => $imagedata) {
+            foreach ($trickdata['images'] as $imagedata) {
 
                 $objectImage = new Image();
                 $objectImage->setName($imagedata['name']);
@@ -63,7 +63,7 @@ class AppFixtures extends Fixture
                 $trick->addImage($objectImage);
             }
 
-            foreach ($trickdata['videos'] as $video => $videodata) {
+            foreach ($trickdata['videos'] as $videodata) {
 
                 $objectVideo = new Video();
                 $objectVideo->setUrl($videodata);

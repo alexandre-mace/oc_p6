@@ -22,7 +22,7 @@ class TrickRepository extends ServiceEntityRepository
   /**
     * @return Trick[] Returns an array of Trick objects
     */
-    public function getTricks($limit)
+    public function getTricks($limit = 300)
     {
         return $this->createQueryBuilder('t')
             ->setMaxResults($limit)

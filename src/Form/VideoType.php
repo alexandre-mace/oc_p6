@@ -10,15 +10,18 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class VideoType extends AbstractType
 {
+
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('url', TextType::class, [
-            'label' => 'Link to the video',
-            'required' => false,
-            'attr' => [
-                'class' => 'uploadVideo'
-            ]
-        ]);
+        $builder
+            ->add('url', TextType::class, [
+                'label' => 'Link to the video',
+                'required' => false,
+                'attr' => [
+                    'class' => 'uploadVideo'
+                ]
+            ])
+        ;
     }
     public function configureOptions(OptionsResolver $resolver)
     {

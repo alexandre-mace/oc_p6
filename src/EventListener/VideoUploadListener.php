@@ -7,6 +7,8 @@ use Doctrine\ORM\Event\LifecycleEventArgs;
 use Doctrine\ORM\Event\PreUpdateEventArgs;
 use App\Entity\Video;
 use App\Service\YoutubeLinkUploader;
+use Symfony\Component\Security\Core\Security;
+
 
 class VideoUploadListener
 {
@@ -46,4 +48,5 @@ class VideoUploadListener
             $entity->setUrl($embedUrl);
         }
     }
+
 }

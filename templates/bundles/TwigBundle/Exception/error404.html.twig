@@ -1,0 +1,29 @@
+{# templates/bundles/TwigBundle/Exception/error404.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block header %}
+
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col d-flex">
+                <div class="jumbotron my-auto">
+                    <h1 class="display-4">Page not found <i class="far fa-frown"></i></h1>
+					<p>The requested page couldn't be located. Checkout for any URL misspelling or <a href="{{ path('trick_index') }}">return to the homepage</a>.</p>
+                </div>    
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+    <footer class="fixed-bottom">
+        <div class="container">
+            <div class="row mt-5 pt-2">
+                <div class="col">
+                    <p class="text-center">SnowTricks, all rights reserved <i class="far fa-copyright"></i> 2018</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}

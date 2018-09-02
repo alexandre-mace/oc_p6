@@ -13,8 +13,11 @@ use App\Service\TokenGenerator;
 class UserListener
 {
     private $encoder;
+ 
     private $tokenGenerator;
+ 
     private $mailer;
+ 
     private $twig;
 
     public function __construct(UserPasswordEncoderInterface $encoder, TokenGenerator $tokenGenerator, \Swift_Mailer $mailer, \Twig_Environment $twig)
@@ -82,7 +85,7 @@ class UserListener
 
         if ($entity->getResetToken()) {
             $message = (new \Swift_Message('Reset password mail'))
-                ->setFrom($_ENV['EMAIL_ADDRESS'])
+                ->setFrom(getenv('EMAIL_ADDRESS'))
                 ->setTo($entity->getEmail())
                 ->setBody(
                     $this->twig->render(

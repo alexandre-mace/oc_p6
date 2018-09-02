@@ -1,18 +1,14 @@
 <div class="col-md-4 p-2" id="image-{{ form.vars.name }}">
     <div class="border p-2 w-100">
-    	{% if trick is not defined or image is not defined or is_granted('edit', trick) %}
-   			<input type="file" class="mb-2 file form-control-file uploadImg" data-rel="#{{ form.name.vars.id }}" data-img="{{ form.vars.name }}"/>
-    	{% endif %}
+   		<input type="file" class="mb-2 file form-control-file uploadImg" {{ (image is not defined) ? 'required' : '' }} data-rel="#{{ form.name.vars.id }}" data-img="{{ form.vars.name }}"/>
 		{{ form_row(form.name) }}
  		<img id="showImg-{{ form.vars.name }}" class="showImg mb-2" src="{{ asset('uploads/images/' ~ form.name.vars.data) }}" alt="your image"/>
  		<br>
- 		{# if you are adding a new trick then trick doesnt exist so you can access main and if you are updating it needs to be the owner to access it #} 
+ 		{# if you are adding a new trick then the trick doesnt exist so you can access main and if you are updating it needs to be the owner #} 
  		{% if trick is not defined or is_granted('edit', trick) %}
 	 		{{ form_row(form.main) }}
  		{% endif %}
-     	{% if trick is not defined or image is not defined or is_granted('edit', trick) %}
-			<button type="button" class="mt-3 btn btn-sm btn-danger btn-remove" data-rel="#image-{{ form.vars.name }}">Supprimer</button>
-    	{% endif %}
+		<button type="button" class="mt-3 btn btn-sm btn-danger btn-remove" data-rel="#image-{{ form.vars.name }}">Supprimer</button>
 	</div>
 </div>
 

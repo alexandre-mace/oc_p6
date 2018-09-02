@@ -13,6 +13,7 @@ use Symfony\Component\Security\Core\Security;
 class TrickListener
 {
     private $slugger;
+
     private $security;
 
     public function __construct(Slugger $slugger, Security $security)
