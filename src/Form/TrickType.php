@@ -83,7 +83,7 @@ class TrickType extends AbstractType
             return;
         }
 
-        foreach ($trick->getImages() as $key => $value) {
+        foreach ($trick->getImages() as $value) {
             if ($value->getMain()) {
                 $trick->setMainImage($value);
                 $event->setData($trick);
