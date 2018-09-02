@@ -13,12 +13,10 @@ use Symfony\Component\Security\Core\Security;
 class VideoUploadListener
 {
     private $uploader;
-    private $security;
 
     public function __construct(YoutubeLinkUploader $uploader, Security $security)
     {
         $this->uploader = $uploader;
-        $this->security = $security;
     }
 
     public function prePersist(LifecycleEventArgs $args)
@@ -26,7 +24,6 @@ class VideoUploadListener
         $entity = $args->getEntity();
 
         $this->uploadFile($entity);
-        $this->hydrateAuthor($entity);
     }
 
     public function preUpdate(PreUpdateEventArgs $args)
@@ -52,13 +49,4 @@ class VideoUploadListener
         }
     }
 
-    private function hydrateAuthor($entity)
-    {
-        // upload only works for Video entities
-        if (!$entity instanceof Video) {
-            return;
-        }
-        $user = $this->security->getUser();
-        $entity->setAuthor($user);
-    }
 }

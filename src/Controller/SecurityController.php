@@ -12,6 +12,9 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use App\Form\ForgotPasswordType;
 use App\Form\ResetPasswordType;
 use App\Entity\User;
+use App\Handler\SecurityRegisterHandler;
+use App\Handler\SecurityConfirmHandler;
+use App\Handler\SecurityResetPasswordHandler;
 
 
 class SecurityController extends Controller
@@ -36,12 +39,10 @@ class SecurityController extends Controller
     /**
      * @Route("/register", name="security_register")
      */
-    public function register(Request $request, EntityManagerInterface $manager)
+    public function register(Request $request, SecurityRegisterHandler $handler)
     {
         $form = $this->createForm(UserType::class)->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            $manager->persist($form->getData());
-            $manager->flush();
+        if ($handler->handle($form)) {
             $this->addFlash('info', 'We\'ve just sent you an email to validate your account !');
             return $this->redirectToRoute('trick_index');
         }
@@ -55,13 +56,10 @@ class SecurityController extends Controller
     /**
      * @Route("/confirm/{confirmationToken}", methods={"GET"}, name="security_confirm")
      */
-    public function confirm(User $user, EntityManagerInterface $manager)
+    public function confirm(User $user, SecurityConfirmHandler $handler)
     {
-        $user->setConfirmationToken(null);
-        $user->setIsActive(true);
-        $manager->flush();
+        $handler->handle($user);
         $this->addFlash('success', "You have successfully confirmed your account, you can now log in !");
-
         return $this->redirectToRoute('security_login');
     } 
 
@@ -70,7 +68,6 @@ class SecurityController extends Controller
      */
     public function forgotPassword(Request $request, EntityManagerInterface $manager)
     {
-
         $form = $this->createForm(ForgotPasswordType::class)->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
 
@@ -98,12 +95,10 @@ class SecurityController extends Controller
     /**
      * @Route("/reset-password/{resetToken}", methods={"GET", "POST"}, name="security_reset-password")
      */
-    public function resetPassword(User $user, Request $request, EntityManagerInterface $manager)
+    public function resetPassword(User $user, Request $request, SecurityResetPasswordHandler $handler)
     {
         $form = $this->createForm(ResetPasswordType::class, $user)->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            $user->setResetToken(null);
-            $manager->flush();
+        if ($handler->handle($form, $user)) {
             $this->addFlash('success', 'You\'ve successfully reset your password !');
             return $this->redirectToRoute('trick_index');
         }        

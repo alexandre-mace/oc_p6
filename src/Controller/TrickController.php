@@ -15,6 +15,9 @@ use App\Form\TrickType;
 use App\Form\CommentType; 
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
+use App\Handler\TrickAddHandler;
+use App\Handler\TrickUpdateHandler;
+use App\Handler\TrickDeleteHandler;
 
 class TrickController extends Controller
 {
@@ -31,7 +34,7 @@ class TrickController extends Controller
     /**
      * @Route("/trick/{slug}", name="trick_show")
      */
-    public function show(EntityManagerInterface $manager, Trick $trick)
+    public function show(Trick $trick)
     {
         $form = $this->createForm(CommentType::class);
         return $this->render('trick/view.html.twig', [
@@ -44,13 +47,11 @@ class TrickController extends Controller
      * @Route("/add", name="trick_add")
      * @Security("is_granted('ROLE_USER')")     
      */
-    public function add(Request $request, EntityManagerInterface $manager)
+    public function add(Request $request, TrickAddHandler $handler)
     {
 	    $form = $this->createForm(TrickType::class)->handleRequest($request);
-	    if ($form->isSubmitted() && $form->isValid()) {
-	        $manager->persist($form->getData());
-	        $manager->flush();
-            $this->addFlash('info', 'The new trick has been added !');
+	    if ($handler->handle($form)) {
+            $this->addFlash('success', 'The new trick has been added !');
 	        return $this->redirectToRoute('trick_index');
 	    }
 	    return $this->render('trick/add.html.twig', array(
@@ -62,12 +63,11 @@ class TrickController extends Controller
      * @Route("/update/{slug}", name="trick_update")
      * @Security("is_granted('ROLE_USER')")     
      */
-    public function update(Request $request, EntityManagerInterface $manager, Trick $trick)
+    public function update(Request $request, Trick $trick, TrickUpdateHandler $handler)
     {
         $form = $this->createForm(TrickType::class, $trick)->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            $manager->flush();
-            $this->addFlash('info', 'The trick has been updated !');
+        if ($handler->handle($form)) {
+            $this->addFlash('success', 'The new trick has been added !');
             return $this->redirectToRoute('trick_index');
         }
         return $this->render('trick/edit.html.twig', array(
@@ -79,13 +79,11 @@ class TrickController extends Controller
     /**
      * @Route("/delete/{slug}", name="trick_delete")
      */
-    public function delete(Request $request, EntityManagerInterface $manager, Trick $trick)
+    public function delete(Request $request, Trick $trick, TrickDeleteHandler $handler)
     {
         $this->denyAccessUnlessGranted('delete', $trick);
-        $trick->setMainImage(null);
-	    $manager->remove($trick);
-		$manager->flush();
-        $this->addFlash('info', 'The trick has been successfully deleted !');
+        $handler->handle($trick);
+        $this->addFlash('success', 'The trick has been successfully deleted !');
 	    return $this->redirectToRoute('trick_index');
 	}
 

@@ -40,9 +40,6 @@ class ImageType extends AbstractType
                 $form = $event->getForm();
 
                 $user = $this->tokenStorage->getToken()->getUser();
-                if($image && $user !== $image->getAuthor()) {
-                    $form->remove('name');
-                }
                 if($image && $user !== $image->getTrick()->getAuthor()) {
                     $form->remove('main');
                 }

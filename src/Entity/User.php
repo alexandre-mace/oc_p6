@@ -58,11 +58,6 @@ class User implements UserInterface, \Serializable
     private $email;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Image", mappedBy="author", orphanRemoval=true)
-     */
-    private $images;
-
-    /**
      * @ORM\OneToOne(targetEntity="App\Entity\Avatar", mappedBy="user", cascade={"persist", "remove"})
      */
     private $avatar;
@@ -76,11 +71,6 @@ class User implements UserInterface, \Serializable
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $confirmationToken;
-
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Video", mappedBy="author", orphanRemoval=true)
-     */
-    private $videos;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -189,37 +179,6 @@ class User implements UserInterface, \Serializable
         ) = unserialize($serialized, array('allowed_classes' => false));
     }
 
-    /**
-     * @return Collection|Image[]
-     */
-    public function getImages(): Collection
-    {
-        return $this->images;
-    }
-
-    public function addImage(Image $image): self
-    {
-        if (!$this->images->contains($image)) {
-            $this->images[] = $image;
-            $image->setAuthor($this);
-        }
-
-        return $this;
-    }
-
-    public function removeImage(Image $image): self
-    {
-        if ($this->images->contains($image)) {
-            $this->images->removeElement($image);
-            // set the owning side to null (unless already changed)
-            if ($image->getAuthor() === $this) {
-                $image->setAuthor(null);
-            }
-        }
-
-        return $this;
-    }
-
     public function getAvatar(): ?Avatar
     {
         return $this->avatar;
@@ -257,37 +216,6 @@ class User implements UserInterface, \Serializable
     public function setConfirmationToken(?string $confirmationToken): self
     {
         $this->confirmationToken = $confirmationToken;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Video[]
-     */
-    public function getVideos(): Collection
-    {
-        return $this->videos;
-    }
-
-    public function addVideo(Video $video): self
-    {
-        if (!$this->videos->contains($video)) {
-            $this->videos[] = $video;
-            $video->setAuthor($this);
-        }
-
-        return $this;
-    }
-
-    public function removeVideo(Video $video): self
-    {
-        if ($this->videos->contains($video)) {
-            $this->videos->removeElement($video);
-            // set the owning side to null (unless already changed)
-            if ($video->getAuthor() === $this) {
-                $video->setAuthor(null);
-            }
-        }
 
         return $this;
     }

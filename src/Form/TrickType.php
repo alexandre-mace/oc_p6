@@ -26,7 +26,6 @@ class TrickType extends AbstractType
         $this->tokenStorage = $tokenStorage;
     }
 
-
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder

@@ -39,13 +39,6 @@ class Image
      */
     private $main = false;
 
-
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="images")
-     * @ORM\JoinColumn(nullable=true)
-     */
-    private $author;
-
     /**
      * @ORM\Column(type="string", length=255)
      */
@@ -89,18 +82,6 @@ class Image
     public function setMain(bool $main): self
     {
         $this->main = $main;
-
-        return $this;
-    }
-
-    public function getAuthor(): ?User
-    {
-        return $this->author;
-    }
-
-    public function setAuthor(?User $author): self
-    {
-        $this->author = $author;
 
         return $this;
     }
