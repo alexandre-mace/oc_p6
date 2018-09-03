@@ -8,34 +8,34 @@ Symfony blog, 6th project from OpenClassroom's class
 ## Installation 
 * Clone the repository and open it.
 
-`git clone https://github.com/alexandre-mace/oc_p6.git`
-`cd oc_p6`
+  `git clone https://github.com/alexandre-mace/oc_p6.git`
+  `cd oc_p6`
 
 * Update dependencies.
 
-`composer update`
+  `composer update`
 
 ## Configuration
 * Customize the .env file
 
 ### doctrine
 
-`DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name"`
+  `DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name"`
 
 ### swift-mailer
 
-`MAILER_URL=gmail://username:password@localhost`
+  `MAILER_URL=gmail://username:password@localhost`
 
 * Create database 
 
-` php bin/console doctrine:database:create`
+  `php bin/console doctrine:database:create`
 
 * Get tables 
 
-`php bin/console doctrine:schema:update --dump-sql`
-`php bin/console doctrine:schema:update --force`
+  `php bin/console doctrine:schema:update --dump-sql
+  `php bin/console doctrine:schema:update --force`
 
 * Get data
 
-` php bin/console doctrine:fixtures:load`
+  `php bin/console doctrine:fixtures:load`
 
