@@ -8,8 +8,10 @@ Symfony blog, 6th project from OpenClassroom's class
 ## Installation 
 * Clone the repository and open it.
 
-  `git clone https://github.com/alexandre-mace/oc_p6.git`
-  `cd oc_p6`
+```
+  git clone https://github.com/alexandre-mace/oc_p6.git
+  cd oc_p6
+```
 
 * Update dependencies.
 
@@ -32,8 +34,10 @@ Symfony blog, 6th project from OpenClassroom's class
 
 * Get tables 
 
-  `php bin/console doctrine:schema:update --dump-sql
-  `php bin/console doctrine:schema:update --force`
+```
+  php bin/console doctrine:schema:update --dump-sql
+  php bin/console doctrine:schema:update --force
+```
 
 * Get data
 
