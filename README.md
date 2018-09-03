@@ -30,6 +30,11 @@ Symfony blog, 6th project from OpenClassroom's class
 
 ` php bin/console doctrine:database:create`
 
+* Get tables 
+
+`php bin/console doctrine:schema:update --dump-sql`
+`php bin/console doctrine:schema:update --force`
+
 * Get data
 
 ` php bin/console doctrine:fixtures:load`
