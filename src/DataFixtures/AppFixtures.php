@@ -58,7 +58,6 @@ class AppFixtures extends Fixture
                 $objectImage = new Image();
                 $objectImage->setName($imagedata['name']);
                 $objectImage->setTrick($trick);
-                $objectImage->setAuthor($userA);
 
                 $trick->addImage($objectImage);
             }
@@ -68,7 +67,6 @@ class AppFixtures extends Fixture
                 $objectVideo = new Video();
                 $objectVideo->setUrl($videodata);
                 $objectVideo->setTrick($trick);
-                $objectVideo->setAuthor($userA);
 
                 $trick->addVideo($objectVideo);
             }
