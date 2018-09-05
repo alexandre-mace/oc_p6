@@ -37,7 +37,6 @@ class AppFixtures extends Fixture
         $userA->setIsActive(true);
         $userA->setPlainPassword('alexandre');
 
-
         $userB = new User;
         $avatarB = new Avatar;
         $avatarB->setName('mute_1.jpg');
@@ -48,6 +47,8 @@ class AppFixtures extends Fixture
         $userB->setIsActive(true);
         $userB->setPlainPassword('alexandre');
     
+
+        $manager->persist($userA);
         $manager->persist($userB);
 
 
