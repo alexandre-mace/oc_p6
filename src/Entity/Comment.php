@@ -20,13 +20,12 @@ class Comment
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User")
-     * @ORM\JoinColumn(nullable=true)
+     * @ORM\JoinColumn(nullable=false)
      */
     private $author;
 
     /**
      * @ORM\Column(type="datetime")
-     * @Assert\DateTime() 
      */
     private $addedAt;
 
@@ -38,6 +37,7 @@ class Comment
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank()       
      */
     private $content;
 

@@ -48,3 +48,13 @@ Symfony blog, 6th project from OpenClassroom's class
 
   `php bin/console doctrine:fixtures:load`
 
+## Tests
+* The databse comes with a user already registered to make tests (username = 'a', password = 'alexandre')
+
+* Configure the phpunit.xml.dist file
+```
+<env name="DATABASE_URL" value="mysql://db_user:db_password@127.0.0.1:3306/db_name"/>
+<env name="A_USERNAME" value="a"/>
+<env name="A_PASSWORD" value="alexandre"/>
+```
+* run in console `./bin/phpunit` and results will show up in console

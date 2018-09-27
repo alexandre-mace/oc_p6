@@ -27,20 +27,13 @@ class Image
     private $trick;
 
     /**
-     * @Assert\File(
-     *     mimeTypes={"image/jpeg", "image/png"},
-     *     maxSize = "16M"
-     * )
-     */
-    private $file;
-
-    /**
      * @ORM\Column(type="boolean")
      */
     private $main = false;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()       
      */
     private $name;
     
@@ -58,18 +51,6 @@ class Image
     public function setTrick(?Trick $trick): self
     {
         $this->trick = $trick;
-
-        return $this;
-    }
-
-    public function getFile()
-    {
-        return $this->file;
-    }
-
-    public function setFile($file)
-    {
-        $this->file = $file;
 
         return $this;
     }

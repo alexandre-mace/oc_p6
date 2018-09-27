@@ -1,10 +1,13 @@
 <?php
+
 namespace App\Security;
 
 use App\Entity\User as AppUser;
 use Symfony\Component\Security\Core\User\UserCheckerInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
+use Symfony\Component\HttpFoundation\Session\Session;
+
 
 class UserChecker implements UserCheckerInterface
 {
@@ -27,3 +30,4 @@ class UserChecker implements UserCheckerInterface
         }
     }
 }
+

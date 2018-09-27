@@ -27,15 +27,15 @@ class User implements UserInterface, \Serializable
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\Length(
-     *     min = 6
-     * )
      */
     private $password;
 
     /**
      * @Assert\NotBlank()
-     * @Assert\Length(max=4096)
+     * @Assert\Length(
+     *     min = 6,
+     *     max=4096
+     * )
      */
     private $plainPassword;
 
@@ -52,13 +52,13 @@ class User implements UserInterface, \Serializable
 
     /**
      * @ORM\Column(type="string", length=255, unique=true)
-     * @Assert\NotBlank()
      * @Assert\Email()
      */
     private $email;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Avatar", mappedBy="user", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="App\Entity\Avatar", mappedBy="user", orphanRemoval=true, cascade={"persist", "remove"})
+     * @Assert\Valid()
      */
     private $avatar;
 
@@ -79,8 +79,6 @@ class User implements UserInterface, \Serializable
 
     public function __construct()
     {
-        $this->images = new ArrayCollection();
-        $this->videos = new ArrayCollection();
     }
 
     public function getId()

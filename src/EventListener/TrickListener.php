@@ -56,7 +56,9 @@ class TrickListener
         if (!$entity instanceof Trick) {
             return;
         }
-        $user = $this->security->getUser();
-        $entity->setAuthor($user);
+
+        if ($this->security->getUser()) {
+            $entity->setAuthor($this->security->getUser());            
+        }
     }
 }

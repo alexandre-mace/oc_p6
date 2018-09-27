@@ -8,11 +8,9 @@ use App\Entity\Category;
 use App\Entity\Comment;
 use App\Entity\Image;
 use App\Entity\Trick;
+use App\Entity\Video;
 use App\Entity\User;
 use App\Entity\Avatar;
-use App\Entity\Video;
-
-
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Yaml\Yaml;
@@ -21,36 +19,37 @@ class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
-        $data = Yaml::parseFile('src/DataFixtures/AppFixtures.yaml');
+        $avatarA = new Avatar;
+        $avatarA->setName('mute_1.jpg');
+        $avatarB = new Avatar;
+        $avatarB->setName('mute_1.jpg');
 
-        $singletonCategories = [];
-
+        $manager->persist($avatarA);
+        $manager->persist($avatarA);
+        $manager->flush();
 
 
         $userA = new User;
-        $avatarA = new Avatar;
-        $avatarA->setName('mute_1.jpg');
-        $avatarA->setUser($userA);
+        $userA->setAvatar($avatarA);
         $userA->setUsername('a');
         $userA->setEmail('oc.alexandremace@gmail.com');
-        $userA->setAvatar($avatarA);
         $userA->setIsActive(true);
         $userA->setPlainPassword('alexandre');
 
         $userB = new User;
-        $avatarB = new Avatar;
-        $avatarB->setName('mute_1.jpg');
-        $avatarB->setUser($userB);
+        $userB->setAvatar($avatarB);
         $userB->setUsername('b');
         $userB->setEmail('alex-mace@hotmail.fr');
-        $userB->setAvatar($avatarB);
         $userB->setIsActive(true);
         $userB->setPlainPassword('alexandre');
     
-
         $manager->persist($userA);
         $manager->persist($userB);
+        $manager->flush();
 
+        $data = Yaml::parseFile('src/DataFixtures/AppFixtures.yaml');
+
+        $singletonCategories = [];
 
         foreach ($data['tricks'] as $trickdata) {
             $trick = new Trick();
@@ -93,6 +92,7 @@ class AppFixtures extends Fixture
 
             $manager->persist($comment);
             $manager->persist($trick);
+            $manager->flush();
 
         }
 

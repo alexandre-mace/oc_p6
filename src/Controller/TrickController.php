@@ -51,7 +51,7 @@ class TrickController extends Controller
     {
 	    $form = $this->createForm(TrickType::class)->handleRequest($request);
 	    if ($handler->handle($form)) {
-            $this->addFlash('success', 'The new trick has been added !');
+            $this->addFlash('success', 'The new trick has been successfully added !');
 	        return $this->redirectToRoute('trick_index');
 	    }
 	    return $this->render('trick/add.html.twig', array(
@@ -67,7 +67,7 @@ class TrickController extends Controller
     {
         $form = $this->createForm(TrickType::class, $trick)->handleRequest($request);
         if ($handler->handle($form)) {
-            $this->addFlash('success', 'The new trick has been added !');
+            $this->addFlash('success', 'The trick has been successfully updated !');
             return $this->redirectToRoute('trick_index');
         }
         return $this->render('trick/edit.html.twig', array(
