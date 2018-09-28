@@ -50,14 +50,14 @@ class TrickControllerTest extends WebTestCase
             $values = $form->getPhpValues();
             // valueur de retour à assigner à name ??
             $values['trick']['images'][0]['name'] = 'valeur de retour';
-            */
+            
             
             // adding image - 2 méthode
             $addImageButton = $crawler->selectButton('addImageButton')->link();
             $crawler = $client->click($addImageButton);
             $input = $crawler->filter('uploadImg')->last();
             $input->upload('../../images/indy_1.jpg');
-            //
+            */
             
             // adding video
             $values = $form->getPhpValues();
