@@ -13,11 +13,8 @@ use App\Service\TokenGenerator;
 class UserListener
 {
     private $encoder;
- 
     private $tokenGenerator;
- 
     private $mailer;
- 
     private $twig;
 
     public function __construct(UserPasswordEncoderInterface $encoder, TokenGenerator $tokenGenerator, \Swift_Mailer $mailer, \Twig_Environment $twig)

@@ -25,7 +25,6 @@ class CommentController extends Controller
         $comment = new Comment($trick);
         $form = $this->createForm(CommentType::class, $comment)->handleRequest($request);;
         if ($handler->handle($form, $comment)) {
-            $this->addFlash('success', 'The new comment has been successfully added !');
             return $this->redirectToRoute('trick_show', array('slug' => $trick->getSlug()));
         }
         return $this->render('trick/view.html.twig', [
