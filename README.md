@@ -19,9 +19,9 @@ Symfony blog, 6th project from OpenClassroom's class
   cd oc_p6
 ```
 
-* Update dependencies.
+* Install dependencies.
 
-  `composer update`
+  `composer install`
 
 ## Configuration
 * Customize the .env file
