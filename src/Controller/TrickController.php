@@ -77,7 +77,6 @@ class TrickController extends Controller
      */
     public function delete(Trick $trick, TrickDeleteHandler $handler)
     {
-        $this->denyAccessUnlessGranted('delete', $trick);
         $handler->handle($trick);
 	    return $this->redirectToRoute('trick_index');
 	}
