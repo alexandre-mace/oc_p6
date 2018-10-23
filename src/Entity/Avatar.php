@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\AvatarRepository")
@@ -21,12 +22,13 @@ class Avatar
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()       
      */
     private $name;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\User", inversedBy="avatar", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\OneToOne(targetEntity="App\Entity\User", inversedBy="avatar")
+     * @ORM\JoinColumn(nullable=true)
      */
     private $user;
 

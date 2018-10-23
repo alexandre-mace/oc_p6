@@ -44,7 +44,6 @@ class SecurityController extends Controller
     {
         $form = $this->createForm(UserType::class)->handleRequest($request);
         if ($handler->handle($form)) {
-            $this->addFlash('info', 'We\'ve just sent you an email to validate your account !');
             return $this->redirectToRoute('trick_index');
         }
         return $this->render(
@@ -60,7 +59,6 @@ class SecurityController extends Controller
     public function confirm(User $user, SecurityConfirmHandler $handler)
     {
         $handler->handle($user);
-        $this->addFlash('success', "You have successfully confirmed your account, you can now log in !");
         return $this->redirectToRoute('security_login');
     } 
 
@@ -70,9 +68,7 @@ class SecurityController extends Controller
     public function forgotPassword(Request $request, SecurityForgotPasswordHandler $handler)
     {
         $form = $this->createForm(ForgotPasswordType::class)->handleRequest($request);
-        $user = $handler->handle($form);
-        if ($user instanceof User) {
-            $this->addFlash('info', 'We\'ve just sent you an email to reset your password !');
+        if ($handler->handle($form)) {
             return $this->redirectToRoute('trick_index');
         }
         return $this->render(
@@ -89,7 +85,6 @@ class SecurityController extends Controller
     {
         $form = $this->createForm(ResetPasswordType::class, $user)->handleRequest($request);
         if ($handler->handle($form, $user)) {
-            $this->addFlash('success', 'You\'ve successfully reset your password !');
             return $this->redirectToRoute('trick_index');
         }        
         return $this->render(

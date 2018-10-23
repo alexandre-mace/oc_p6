@@ -39,14 +39,11 @@ class Trick
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Comment", mappedBy="trick", orphanRemoval=true, cascade={"persist"})
-     * @Assert\NotBlank()
-     * @Assert\Valid     
      */
     private $comments;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Image", mappedBy="trick", orphanRemoval=true, cascade={"persist"})
-     * @ORM\JoinColumn(onDelete="CASCADE")
+     * @ORM\OneToMany(targetEntity="App\Entity\Image", mappedBy="trick", orphanRemoval=true, cascade={"persist", "remove"})
      * @Assert\Valid
      */
     private $images;
@@ -64,7 +61,6 @@ class Trick
 
     /**
      * @ORM\Column(type="datetime")
-     * @Assert\DateTime()   
      */
     private $addedAt;
 
@@ -74,14 +70,13 @@ class Trick
     private $slug;
 
     /**
-     * @ORM\joinColumn(name="main_image_id", nullable=true, onDelete="SET NULL")
      * @ORM\OneToOne(targetEntity="App\Entity\Image", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(name="main_image_id", nullable=true, onDelete="SET NULL")
      */
     private $mainImage;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\User", cascade={"persist"})
-     * @ORM\JoinColumn(nullable=true)
+     * @ORM\ManyToOne(targetEntity="App\Entity\User")
      */
     private $author;
 
@@ -282,8 +277,8 @@ class Trick
     {
         return $this->author;
     }
-
     public function setAuthor(?User $author): self
+
     {
         $this->author = $author;
 

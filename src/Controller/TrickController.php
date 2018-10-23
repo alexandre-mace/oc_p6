@@ -4,13 +4,11 @@
 
 namespace App\Controller;
 
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use App\Entity\Trick;
 use App\Entity\Comment;
-use App\Entity\Category;
 use App\Form\TrickType;
 use App\Form\CommentType; 
 use Doctrine\ORM\EntityManagerInterface;
@@ -51,7 +49,6 @@ class TrickController extends Controller
     {
 	    $form = $this->createForm(TrickType::class)->handleRequest($request);
 	    if ($handler->handle($form)) {
-            $this->addFlash('success', 'The new trick has been added !');
 	        return $this->redirectToRoute('trick_index');
 	    }
 	    return $this->render('trick/add.html.twig', array(
@@ -67,7 +64,6 @@ class TrickController extends Controller
     {
         $form = $this->createForm(TrickType::class, $trick)->handleRequest($request);
         if ($handler->handle($form)) {
-            $this->addFlash('success', 'The new trick has been added !');
             return $this->redirectToRoute('trick_index');
         }
         return $this->render('trick/edit.html.twig', array(
@@ -83,7 +79,6 @@ class TrickController extends Controller
     {
         $this->denyAccessUnlessGranted('delete', $trick);
         $handler->handle($trick);
-        $this->addFlash('success', 'The trick has been successfully deleted !');
 	    return $this->redirectToRoute('trick_index');
 	}
 

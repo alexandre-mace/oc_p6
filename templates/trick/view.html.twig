@@ -41,12 +41,12 @@
 
 	<div id="trick" class="row pt-5 trick">
         {% for image in trick.images %}
-			<div class="col-md-3 p-2 text-center">
+			<div class="col-lg-6 p-2 text-center">
 				<img class="showImg" src="{{ asset('uploads/images/' ~ image.name) }}">
 			</div>
 		{% endfor %}	
         {% for video in trick.videos %}
-			<div class="col-md-3 p-2 text-center d-flex">
+			<div class="col-lg-6 p-2 text-center d-flex">
 				<iframe class="showVideo m-auto" src="{{ video.url }}" frameborder="0" allowfullscreen></iframe>
 			</div>
 		{% endfor %}								
@@ -69,6 +69,9 @@
     {% if is_granted('ROLE_USER') %}
 		<hr>
 			{{ include('comment/add.html.twig') }}
+	{% else %}
+		<hr>
+		<p>You must be logged in to add a new comment ! <i class="fas fa-smile"></i></p>
 	{% endif %}
 
 	{% for comment in trick.comments %}
@@ -91,12 +94,14 @@
 		</div>
 	{% endfor %}
 
-    <div class="row">
-        <div class="col">
-            <div class="text-center">
-                <button id="loadMore" class="btn btn-outline-success btn-lg">See more</button>
-            </div>
-        </div>
-    </div>
+	{% if trick.comments|length > 10 %}
+	    <div class="row">
+	        <div class="col">
+	            <div class="text-center">
+	                <button id="loadMore" class="btn btn-outline-success btn-lg">See more</button>
+	            </div>
+	        </div>
+	    </div>
+	{% endif %}
 
 {% endblock %}
