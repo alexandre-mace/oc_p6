@@ -13,7 +13,7 @@ class TrickControllerTest extends WebTestCase
     public function testIndex()
     {
         $client = self::createClient();
-        $crawler = $client->request('GET', '/');
+        $client->request('GET', '/');
         $this->assertTrue($client->getResponse()->isSuccessful());
     }
 
@@ -112,7 +112,7 @@ class TrickControllerTest extends WebTestCase
         $client->request('GET', '/delete/360');
         $this->assertTrue($client->getResponse()->isRedirection());
         
-        $crawler = $client->followRedirect();
+        $client->followRedirect();
         $this->assertContains(
             'The trick has been successfully deleted !',
             $client->getResponse()->getContent()
