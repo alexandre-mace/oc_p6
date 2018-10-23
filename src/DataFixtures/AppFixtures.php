@@ -34,14 +34,14 @@ class AppFixtures extends Fixture
         $userA->setUsername('a');
         $userA->setEmail('oc.alexandremace@gmail.com');
         $userA->setIsActive(true);
-        $userA->setPlainPassword('alexandre');
+        $userA->setPlainPassword('password');
 
         $userB = new User;
         $userB->setAvatar($avatarB);
         $userB->setUsername('b');
         $userB->setEmail('alex-mace@hotmail.fr');
         $userB->setIsActive(true);
-        $userB->setPlainPassword('alexandre');
+        $userB->setPlainPassword('password');
     
         $manager->persist($userA);
         $manager->persist($userB);
