@@ -84,12 +84,31 @@ class TrickControllerTest extends WebTestCase
             'PHP_AUTH_USER' => getEnv('A_USERNAME'),
             'PHP_AUTH_PW'   => getEnv('A_PASSWORD')
         ));
-        $crawler = $client->request('GET', '/update/indy');
+        $crawler = $client->request('GET', '/add');
+        $this->assertTrue($client->getResponse()->isSuccessful());
+
+        $trickName = 'test-update' .rand();
+        if ($client->getResponse()->isSuccessful()) {
+            $form = $crawler->selectButton('Save')->form();
+            $form['trick[name]'] = $trickName;
+            $form['trick[description]'] = 'test trick add test trick add test trick add test trick add test trick add';
+            $client->submit($form);
+
+            $this->assertTrue($client->getResponse()->isRedirection());
+
+            $crawler = $client->followRedirect();
+            $this->assertContains(
+                'The new trick has been successfully added !',
+                $client->getResponse()->getContent()
+            );
+        }
+
+        $crawler = $client->request('GET', '/update/' .$trickName);
         $this->assertTrue($client->getResponse()->isSuccessful());
 
         if ($client->getResponse()->isSuccessful()) {
             $form = $crawler->selectButton('Save')->form();
-            $form['trick[name]'] = 'test trick update' . rand();
+            $form['trick[name]'] = 'test update' . rand();
             $form['trick[description]'] = 'test trick update test trick update test trick update';
             $form['trick[categories][1]']->tick();
             $client->submit($form);
@@ -109,7 +128,26 @@ class TrickControllerTest extends WebTestCase
             'PHP_AUTH_USER' => getEnv('A_USERNAME'),
             'PHP_AUTH_PW'   => getEnv('A_PASSWORD')
         ));
-        $client->request('GET', '/delete/360');
+        $crawler = $client->request('GET', '/add');
+        $this->assertTrue($client->getResponse()->isSuccessful());
+
+        $trickName = 'test-delete' .rand();
+        if ($client->getResponse()->isSuccessful()) {
+            $form = $crawler->selectButton('Save')->form();
+            $form['trick[name]'] = $trickName;
+            $form['trick[description]'] = 'test trick add test trick add test trick add test trick add test trick add';
+            $client->submit($form);
+
+            $this->assertTrue($client->getResponse()->isRedirection());
+
+            $crawler = $client->followRedirect();
+            $this->assertContains(
+                'The new trick has been successfully added !',
+                $client->getResponse()->getContent()
+            );
+        }
+
+        $client->request('GET', '/delete/' .$trickName);
         $this->assertTrue($client->getResponse()->isRedirection());
         
         $client->followRedirect();

@@ -17,8 +17,8 @@ class SecurityControllerTest extends WebTestCase
 
         if ($client->getResponse()->isSuccessful()) {
             $form = $crawler->selectButton('Login')->form();
-            $form['_username'] = 'a';
-            $form['_password'] = 'alexandre';
+            $form['_username'] = getEnv('A_USERNAME');
+            $form['_password'] = getEnv('A_PASSWORD');
             $client->submit($form);
             $this->assertTrue($client->getResponse()->isRedirection());
             
