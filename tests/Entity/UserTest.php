@@ -18,6 +18,8 @@ class UserTest extends TestCase
         $user->setIsActive(true);
         $user->setConfirmationToken('token test');
         $user->setResetToken('token test');
+        $dateTime = new \DateTime();
+        $user->setAddedAt($dateTime);
 
         $this->assertEquals('Username test', $user->getUsername());
         $this->assertEquals('Userpassword test', $user->getPlainPassword());
@@ -26,6 +28,7 @@ class UserTest extends TestCase
         $this->assertEquals(true, $user->getIsActive());
         $this->assertEquals('token test', $user->getConfirmationToken());
         $this->assertEquals('token test', $user->getResetToken());
+        $this->assertEquals($dateTime, $user->getAddedAt());
         $this->assertNull($user->getId());
     }
 

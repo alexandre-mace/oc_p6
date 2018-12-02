@@ -10,11 +10,10 @@ use Symfony\Component\Security\Core\Authorization\Voter\Voter;
 
 class TrickVoter extends Voter
 {
+    const EDIT = 'edit';
+    const DELETE = 'delete';
 
-        const EDIT = 'edit';
-        const DELETE = 'delete';
-
-        protected function supports($attribute, $subject)
+    protected function supports($attribute, $subject)
         {
         // if the attribute isn't one we support, return false
         if (!in_array($attribute, array(self::EDIT, self::DELETE))) {

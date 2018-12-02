@@ -4,9 +4,8 @@
 
 namespace App\Controller;
 
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Comment;
@@ -14,7 +13,7 @@ use App\Entity\Trick;
 use App\Form\CommentType; 
 use App\Handler\CommentAddHandler;
 
-class CommentController extends Controller
+class CommentController extends AbstractController
 {
     /**
      * @Route("/trick/{slug}/add", name="comment_add")

@@ -34,5 +34,14 @@ class CommentControllerTest extends WebTestCase
             );
         }
 	}
+	public function testAddFail()
+    {
+        $client = static::createClient([], [
+            'PHP_AUTH_USER' => getenv('A_USERNAME'),
+            'PHP_AUTH_PW' => getenv('A_PASSWORD'),
+        ]);
+        $client->request('POST', '/trick/mute/add', array('comment[content]' => ''));
+        $this->assertTrue($client->getResponse()->isSuccessful());
+    }
 
 }

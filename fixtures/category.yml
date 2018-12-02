@@ -1,0 +1,13 @@
+App\Entity\Category:
+    category_1:
+        name: grabs
+    category_2:
+        name: rotations
+    category_3:
+        name: flips
+    category_4:
+        name: slides
+    category_5:
+        name: 'old school'
+    category_6:
+        name: 'one foot'
