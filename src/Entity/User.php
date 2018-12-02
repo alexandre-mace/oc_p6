@@ -14,7 +14,6 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  * @UniqueEntity(fields="email", message="Email already taken")
  * @UniqueEntity(fields="username", message="Username already taken")
- * @ORM\HasLifecycleCallbacks()
  */
 class User implements UserInterface, \Serializable
 {
@@ -79,6 +78,7 @@ class User implements UserInterface, \Serializable
 
     public function __construct()
     {
+        $this->setAddedAt(new \DateTime());
     }
 
     public function getId()
@@ -108,17 +108,14 @@ class User implements UserInterface, \Serializable
         return $this;
     }
 
-    public function getAddedAt(): ?\DateTimeInterface
+    public function getAddedAt()
     {
         return $this->addedAt;
     }
 
-    /**
-     * @ORM\PrePersist
-     */
-    public function setAddedAt()
+    public function setAddedAt(\DateTime $dateTime)
     {
-        $this->addedAt = new \DateTime();
+        $this->addedAt = $dateTime;
     }
 
     public function getUsername(): ?string

@@ -4,11 +4,10 @@
 
 namespace App\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use App\Entity\Trick;
-use App\Entity\Comment;
 use App\Form\TrickType;
 use App\Form\CommentType; 
 use Doctrine\ORM\EntityManagerInterface;
@@ -17,7 +16,7 @@ use App\Handler\TrickAddHandler;
 use App\Handler\TrickUpdateHandler;
 use App\Handler\TrickDeleteHandler;
 
-class TrickController extends Controller
+class TrickController extends AbstractController
 {
     /**
      * @Route("/", name="trick_index")

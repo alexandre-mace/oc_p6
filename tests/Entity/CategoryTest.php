@@ -23,5 +23,7 @@ class CategoryTest extends TestCase
         $category = new Category();
         $category->addTrick($trick);
         $this->assertEquals($trick, $category->getTricks()->last());
+        $category->removeTrick($trick);
+        $this->assertArrayNotHasKey(0, $category->getTricks());
     }
 }

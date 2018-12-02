@@ -1,0 +1,5 @@
+App\Entity\Avatar:
+    avatar_1:
+        name: 'mute_1.jpg'
+    avatar_2:
+        name: 'mute_2.jpg'

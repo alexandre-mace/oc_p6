@@ -2,13 +2,11 @@
 // src/Controller/SecurityController.php
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use App\Form\UserType;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use App\Form\ForgotPasswordType;
 use App\Form\ResetPasswordType;
 use App\Entity\User;
@@ -18,7 +16,7 @@ use App\Handler\SecurityForgotPasswordHandler;
 use App\Handler\SecurityResetPasswordHandler;
 
 
-class SecurityController extends Controller
+class SecurityController extends AbstractController
 {
     /**
      * @Route("/login", name="security_login")

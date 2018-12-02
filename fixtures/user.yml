@@ -1,0 +1,13 @@
+App\Entity\User:
+    user_1:
+        avatar: '@avatar_1'
+        username: 'a'
+        email: 'ocp6.alexandremace2@gmail.com'
+        isActive: true
+        plainPassword: 'password'
+    user_2:
+        avatar: '@avatar_2'
+        username: 'b'
+        email: 'ocp6.alexandremace@gmail.com'
+        isActive: true
+        plainPassword: 'password'

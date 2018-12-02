@@ -1,0 +1,61 @@
+App\Entity\Image:
+    image_1:
+        name: mute_1.jpg
+    image_2:
+        name: mute_2.jpg
+    image_3:
+        name: mute_3.jpg
+    image_4:
+        name: indy_1.jpg
+    image_5:
+        name: indy_2.jpg
+    image_6:
+        name: indy_3.jpg
+    image_7:
+        name: tail_grab_1.jpg
+    image_8:
+        name: tail_grab_3.jpg
+    image_9:
+        name: tail_grab_3.jpg
+    image_10:
+        name: nose_grab_1.jpg
+    image_11:
+        name: nose_grab_2.jpg
+    image_12:
+        name: nose_grab_3.jpg
+    image_13:
+        name: 360_1.jpg
+    image_14:
+        name: 360_2.jpg
+    image_15:
+        name: 360_3.jpg
+    image_16:
+        name: big_foot_1.jpg
+    image_17:
+        name: big_foot_2.jpg
+    image_18:
+        name: big_foot_3.jpg
+    image_19:
+        name: nose_slide_1.jpg
+    image_20:
+        name: nose_slide_1.jpg
+    image_21:
+        name: nose_slide_3.jpg
+    image_22:
+        name: tail_slide_1.jpg
+    image_23:
+        name: tail_slide_2.jpg
+    image_24:
+        name: tail_slide_3.jpg
+    image_25:
+        name: frontflip_1.jpg
+    image_26:
+        name: frontflip_2.jpg
+    image_27:
+        name: frontflip_3.jpg
+    image_28:
+        name: backflip_1.jpg
+    image_29:
+        name: backflip_2.jpg
+    image_30:
+        name: backflip_3.jpg

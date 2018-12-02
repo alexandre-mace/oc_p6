@@ -12,7 +12,6 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\TrickRepository")
  * @UniqueEntity("name")
- * @ORM\HasLifecycleCallbacks()
  */
 class Trick
 {
@@ -86,6 +85,7 @@ class Trick
         $this->images = new ArrayCollection();
         $this->videos = new ArrayCollection();
         $this->categories = new ArrayCollection();
+        $this->setAddedAt(new \DateTime());
     }
 
     public function getId()
@@ -241,12 +241,9 @@ class Trick
         return $this->addedAt;
     }
 
-    /**
-     * @ORM\PrePersist
-     */
-    public function setAddedAt()
+    public function setAddedAt(\DateTime $dateTime)
     {
-        $this->addedAt = new \DateTime();
+        $this->addedAt = $dateTime;
     }
 
     public function getSlug(): ?string
