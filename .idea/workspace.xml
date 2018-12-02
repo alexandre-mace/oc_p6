@@ -2,45 +2,96 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed5f0a51-fddd-4f76-bd89-e02f06647271" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fixtures/avatar.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fixtures/category.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fixtures/comment.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fixtures/trick.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fixtures/user.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fixtures/video.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/Repository/AvatarRepositoryTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/Repository/CommentRepositoryTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/Repository/ImageRepositoryTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/Repository/UserRepositoryTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/Repository/VideoRepositoryTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/Security/ExposedTrickVoter.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/Security/TrickVoterTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/Service/TokenGeneratorTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/Twig/TwigExtensionTest.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/packages/translation.yaml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.yaml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/translations/.gitignore" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DataFixtures/.gitignore" afterPath="$PROJECT_DIR$/config/packages/framework_extra.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/bundles.php" afterPath="$PROJECT_DIR$/config/bundles.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/services.yaml" afterPath="$PROJECT_DIR$/config/services.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/CommentController.php" afterPath="$PROJECT_DIR$/src/Controller/CommentController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/FileController.php" afterPath="$PROJECT_DIR$/src/Controller/FileController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/TrickController.php" afterPath="$PROJECT_DIR$/src/Controller/TrickController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Trick.php" afterPath="$PROJECT_DIR$/src/Entity/Trick.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/User.php" afterPath="$PROJECT_DIR$/src/Entity/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Repository/CommentRepository.php" afterPath="$PROJECT_DIR$/src/Repository/CommentRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Repository/TrickRepository.php" afterPath="$PROJECT_DIR$/src/Repository/TrickRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Security/TrickVoter.php" afterPath="$PROJECT_DIR$/src/Security/TrickVoter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/symfony.lock" afterPath="$PROJECT_DIR$/symfony.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/Controller/CommentControllerTest.php" afterPath="$PROJECT_DIR$/tests/Controller/CommentControllerTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/Entity/CategoryTest.php" afterPath="$PROJECT_DIR$/tests/Entity/CategoryTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/Entity/TrickTest.php" afterPath="$PROJECT_DIR$/tests/Entity/TrickTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/Entity/UserTest.php" afterPath="$PROJECT_DIR$/tests/Entity/UserTest.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-clover/clover.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/.css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/.css/nv.d3.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/.css/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/.fonts/glyphicons-halflings-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/.fonts/glyphicons-halflings-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/.fonts/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/.fonts/glyphicons-halflings-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/.fonts/glyphicons-halflings-regular.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/.js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/.js/d3.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/.js/file.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/.js/holder.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/.js/html5shiv.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/.js/jquery.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/.js/nv.d3.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/.js/respond.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Controller/CommentController.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Controller/FileController.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Controller/SecurityController.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Controller/TrickController.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Controller/dashboard.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Controller/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/DataFixtures/AppFixtures.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/DataFixtures/dashboard.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/DataFixtures/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Entity/Avatar.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Entity/Category.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Entity/Comment.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Entity/Image.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Entity/Trick.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Entity/User.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Entity/Video.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Entity/dashboard.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Entity/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/EventListener/CommentListener.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/EventListener/TrickListener.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/EventListener/UserListener.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/EventListener/VideoUploadListener.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/EventListener/dashboard.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/EventListener/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Form/AvatarType.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Form/CommentType.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Form/ForgotPasswordType.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Form/ImageType.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Form/ResetPasswordType.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Form/TrickType.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Form/UserType.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Form/VideoType.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Form/dashboard.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Form/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Handler/CommentAddHandler.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Handler/SecurityConfirmHandler.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Handler/SecurityForgotPasswordHandler.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Handler/SecurityRegisterHandler.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Handler/SecurityResetPasswordHandler.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Handler/TrickAddHandler.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Handler/TrickDeleteHandler.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Handler/TrickUpdateHandler.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Handler/dashboard.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Handler/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Kernel.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Migrations/Version20181010172422.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Migrations/dashboard.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Migrations/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Repository/AvatarRepository.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Repository/CategoryRepository.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Repository/CommentRepository.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Repository/ImageRepository.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Repository/TrickRepository.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Repository/UserRepository.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Repository/VideoRepository.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Repository/dashboard.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Repository/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Security/TrickVoter.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Security/UserChecker.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Security/dashboard.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Security/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Service/Slugger.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Service/TokenGenerator.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Service/YoutubeLinkUploader.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Service/dashboard.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Service/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Twig/AppExtension.php.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Twig/dashboard.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Twig/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/dashboard.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/index.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -51,16 +102,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TrickVoter.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Security/TrickVoter.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-23">
-              <caret line="10" column="28" lean-forward="false" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="TrickVoterTest.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/Security/TrickVoterTest.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -105,7 +146,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -114,6 +155,26 @@
                 <folding />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".env" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -144,18 +205,6 @@
             <state relative-caret-position="288">
               <caret line="23" column="10" lean-forward="false" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExposedTrickVoter.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/Security/ExposedTrickVoter.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="14" column="42" lean-forward="false" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-              <folding>
-                <element signature="e#118#146#0#PHP" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -241,6 +290,7 @@
         <option value="$PROJECT_DIR$/tests/Security/UserTest.php" />
         <option value="$PROJECT_DIR$/tests/Security/UserCheckerTest.php" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -256,7 +306,7 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="985" />
     <option name="y" value="25" />
-    <option name="width" value="1869" />
+    <option name="width" value="935" />
     <option name="height" value="1055" />
   </component>
   <component name="ProjectView">
@@ -400,7 +450,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../oc_p8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../p7/oc_p7" />
     <property name="nodejs_interpreter_path" value="/usr/bin/node" />
   </component>
   <component name="RunDashboard">
@@ -431,12 +481,12 @@
       <workItem from="1543357145681" duration="626000" />
       <workItem from="1543616088419" duration="2873000" />
       <workItem from="1543696418076" duration="1913000" />
-      <workItem from="1543756802402" duration="13981000" />
+      <workItem from="1543756802402" duration="14910000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29353000" />
+    <option name="totallyTimeSpent" value="30282000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="51" y="40" width="1869" height="1055" extended-state="6" />
@@ -473,22 +523,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/bundles.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/twig_extensions.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/packages/test/hautelook_alice.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -648,7 +682,7 @@
         <state relative-caret-position="198">
           <caret line="16" column="35" lean-forward="false" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
           <folding>
-            <element signature="e#120#156#0#PHP" expanded="true" />
+            <element signature="e#120#156#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -666,7 +700,7 @@
         <state relative-caret-position="198">
           <caret line="16" column="35" lean-forward="false" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
           <folding>
-            <element signature="e#120#157#0#PHP" expanded="true" />
+            <element signature="e#120#157#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -700,7 +734,7 @@
         <state relative-caret-position="198">
           <caret line="16" column="35" lean-forward="false" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
           <folding>
-            <element signature="e#120#155#0#PHP" expanded="true" />
+            <element signature="e#120#155#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -710,7 +744,7 @@
         <state relative-caret-position="54">
           <caret line="8" column="31" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
-            <element signature="e#120#140#0#PHP" expanded="true" />
+            <element signature="e#120#140#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -784,7 +818,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
           <folding>
-            <element signature="e#116#147#0#PHP" expanded="true" />
+            <element signature="e#116#147#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -794,7 +828,7 @@
         <state relative-caret-position="54">
           <caret line="8" column="31" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
-            <element signature="e#120#155#0#PHP" expanded="true" />
+            <element signature="e#120#155#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -901,6 +935,22 @@
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
