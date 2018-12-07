@@ -19,7 +19,7 @@ class UserChecker implements UserCheckerInterface
 
         // user is deleted, show a generic Account Not Found message.
         if (!$user->getIsActive()) {
-            throw new AccessDeniedHttpException('You have to confirm your account first thanks to the email we sent');
+            throw new AccessDeniedHttpException('You have to confirm your account first thanks to the email we sent.');
         }
     }
 

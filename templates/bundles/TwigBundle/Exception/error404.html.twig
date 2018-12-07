@@ -8,6 +8,9 @@
             <div class="col d-flex">
                 <div class="jumbotron my-auto">
                     <h1 class="display-4">Page not found <i class="far fa-frown"></i></h1>
+                    {% if exception.message is defined %}
+                        <h2>{{ exception.message }}</h2>
+                    {% endif %}
 					<p>The requested page couldn't be located. Checkout for any URL misspelling or <a href="{{ path('trick_index') }}">return to the homepage</a>.</p>
                 </div>    
             </div>

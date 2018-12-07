@@ -30,7 +30,7 @@ Symfony blog, 6th project from OpenClassroom's class
   `DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name"`
 
 #### swift-mailer
-  `MAILER_URL=gmail://username:password@localhost`
+  `EMAIL_ADDRESS=youremailaddress`
 
 * Create database 
 
@@ -46,6 +46,10 @@ Symfony blog, 6th project from OpenClassroom's class
 * Get data
 
   `php bin/console hautelook:fixtures:load`
+
+## Local server
+
+* `php bin/console server:run` and go to the indicated address
 
 ## Tests
 * The database comes with a user already registered to make tests (username = 'a', password = 'alexandre')
