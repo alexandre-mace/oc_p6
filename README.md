@@ -39,16 +39,16 @@ Symfony blog, 6th project from OpenClassroom's class
 * Get tables 
 
 ```
-  php bin/console doctrine:make:migration
+  php bin/console make:migration
   php bin/console doctrine:migrations:migrate
 ```
 
 * Get data
 
-  `php bin/console doctrine:fixtures:load`
+  `php bin/console hautelook:fixtures:load`
 
 ## Tests
-* The databse comes with a user already registered to make tests (username = 'a', password = 'alexandre')
+* The database comes with a user already registered to make tests (username = 'a', password = 'alexandre')
 
 * Configure the phpunit.xml.dist file
 ```

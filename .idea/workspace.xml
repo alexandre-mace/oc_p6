@@ -2,96 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed5f0a51-fddd-4f76-bd89-e02f06647271" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-clover/clover.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/.css/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/.css/nv.d3.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/.css/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/.fonts/glyphicons-halflings-regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/.fonts/glyphicons-halflings-regular.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/.fonts/glyphicons-halflings-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/.fonts/glyphicons-halflings-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/.fonts/glyphicons-halflings-regular.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/.js/bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/.js/d3.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/.js/file.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/.js/holder.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/.js/html5shiv.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/.js/jquery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/.js/nv.d3.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/.js/respond.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Controller/CommentController.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Controller/FileController.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Controller/SecurityController.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Controller/TrickController.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Controller/dashboard.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Controller/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/DataFixtures/AppFixtures.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/DataFixtures/dashboard.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/DataFixtures/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Entity/Avatar.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Entity/Category.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Entity/Comment.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Entity/Image.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Entity/Trick.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Entity/User.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Entity/Video.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Entity/dashboard.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Entity/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/EventListener/CommentListener.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/EventListener/TrickListener.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/EventListener/UserListener.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/EventListener/VideoUploadListener.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/EventListener/dashboard.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/EventListener/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Form/AvatarType.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Form/CommentType.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Form/ForgotPasswordType.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Form/ImageType.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Form/ResetPasswordType.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Form/TrickType.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Form/UserType.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Form/VideoType.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Form/dashboard.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Form/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Handler/CommentAddHandler.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Handler/SecurityConfirmHandler.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Handler/SecurityForgotPasswordHandler.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Handler/SecurityRegisterHandler.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Handler/SecurityResetPasswordHandler.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Handler/TrickAddHandler.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Handler/TrickDeleteHandler.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Handler/TrickUpdateHandler.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Handler/dashboard.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Handler/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Kernel.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Migrations/Version20181010172422.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Migrations/dashboard.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Migrations/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Repository/AvatarRepository.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Repository/CategoryRepository.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Repository/CommentRepository.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Repository/ImageRepository.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Repository/TrickRepository.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Repository/UserRepository.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Repository/VideoRepository.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Repository/dashboard.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Repository/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Security/TrickVoter.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Security/UserChecker.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Security/dashboard.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Security/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Service/Slugger.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Service/TokenGenerator.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Service/YoutubeLinkUploader.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Service/dashboard.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Service/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Twig/AppExtension.php.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Twig/dashboard.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/Twig/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/dashboard.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/coverage-html/index.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/oc_p6.iml" afterPath="$PROJECT_DIR$/.idea/oc_p6.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -102,56 +15,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TrickVoterTest.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/Security/TrickVoterTest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="679">
-              <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="47" selection-end-column="9" />
-              <folding>
-                <element signature="e#117#138#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserChecker.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Security/UserChecker.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="21" column="47" lean-forward="false" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserInterface.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/symfony/security-core/User/UserInterface.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="607">
-              <caret line="74" column="34" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserCheckerTest.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/Security/UserCheckerTest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="39" column="27" lean-forward="false" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
-              <folding>
-                <element signature="e#118#138#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="90">
-                <caret line="5" column="256" lean-forward="false" selection-start-line="5" selection-start-column="256" selection-end-line="5" selection-end-column="256" />
+              <first_editor relative-caret-position="436">
+                <caret line="41" column="23" lean-forward="false" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -159,8 +28,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".env" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.env">
+      <file leaf-file-name="phpunit.xml.dist" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/phpunit.xml.dist">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="security.yaml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/packages/test/security.yaml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -169,41 +48,71 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="swiftmailer.yaml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/packages/test/swiftmailer.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserTest.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/Security/UserTest.php">
+      <file leaf-file-name="web_profiler.yaml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/packages/test/web_profiler.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="19" column="39" lean-forward="false" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
+      <file leaf-file-name="framework.yaml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/packages/test/framework.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-972">
-              <caret line="80" column="43" lean-forward="false" selection-start-line="80" selection-start-column="43" selection-end-line="80" selection-end-column="43" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserCheckerInterface.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/symfony/security-core/User/UserCheckerInterface.php">
+      <file leaf-file-name="services_test.yaml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/services_test.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="23" column="10" lean-forward="false" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TrickControllerTest.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/Controller/TrickControllerTest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="15" column="37" lean-forward="false" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".env" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".env.dist" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.env.dist">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="7" column="36" lean-forward="true" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -236,6 +145,7 @@
       <find>findBySlug</find>
       <find>Task</find>
       <find>task</find>
+      <find>DATABASE_URL</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src</dir>
@@ -289,8 +199,10 @@
         <option value="$PROJECT_DIR$/tests/Security/TrickVoterTest.php" />
         <option value="$PROJECT_DIR$/tests/Security/UserTest.php" />
         <option value="$PROJECT_DIR$/tests/Security/UserCheckerTest.php" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/phpunit.xml.dist" />
       </list>
     </option>
   </component>
@@ -347,36 +259,19 @@
             <path>
               <item name="oc_p6" type="b2602c69:ProjectViewProjectNode" />
               <item name="oc_p6" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="packages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="test" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="oc_p6" type="b2602c69:ProjectViewProjectNode" />
+              <item name="oc_p6" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="fixtures" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="oc_p6" type="b2602c69:ProjectViewProjectNode" />
               <item name="oc_p6" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="oc_p6" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oc_p6" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="oc_p6" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oc_p6" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Entity" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="oc_p6" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oc_p6" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="EventListener" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="oc_p6" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oc_p6" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Repository" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="oc_p6" type="b2602c69:ProjectViewProjectNode" />
@@ -450,7 +345,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../p7/oc_p7" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../p6/oc_p6" />
     <property name="nodejs_interpreter_path" value="/usr/bin/node" />
   </component>
   <component name="RunDashboard">
@@ -482,14 +377,15 @@
       <workItem from="1543616088419" duration="2873000" />
       <workItem from="1543696418076" duration="1913000" />
       <workItem from="1543756802402" duration="14910000" />
+      <workItem from="1544184890734" duration="1205000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30282000" />
+    <option name="totallyTimeSpent" value="31487000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="51" y="40" width="1869" height="1055" extended-state="6" />
+    <frame x="51" y="25" width="1869" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1482076" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -497,13 +393,13 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -523,86 +419,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/packages/test/hautelook_alice.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/test/framework.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/routing.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/security.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/swiftmailer.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/twig.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/framework.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/framework_extra.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Entity/CategoryTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="26" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Trick.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="87" column="43" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/Entity/TrickTest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
@@ -629,14 +445,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Controller/RepositoryTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="1" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="30" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Controller/RepositoryTest.php" />
     <entry file="file://$PROJECT_DIR$/src/Controller/TrickController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -691,7 +500,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-450">
           <caret line="342" column="20" lean-forward="false" selection-start-line="342" selection-start-column="20" selection-end-line="342" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -709,7 +517,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="334">
           <caret line="80" column="34" lean-forward="false" selection-start-line="80" selection-start-column="34" selection-end-line="80" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -717,7 +524,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="334">
           <caret line="335" column="27" lean-forward="false" selection-start-line="335" selection-start-column="27" selection-end-line="335" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -725,7 +531,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="108" column="20" lean-forward="false" selection-start-line="108" selection-start-column="20" selection-end-line="108" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -769,7 +574,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="47" lean-forward="false" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -785,7 +589,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="16" column="10" lean-forward="false" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -801,7 +604,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-8">
           <caret line="337" column="6" lean-forward="false" selection-start-line="337" selection-start-column="6" selection-end-line="337" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -837,7 +639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="20" column="10" lean-forward="false" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -845,7 +646,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="21" column="40" lean-forward="false" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -854,7 +654,7 @@
         <state relative-caret-position="162">
           <caret line="14" column="42" lean-forward="false" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
           <folding>
-            <element signature="e#118#146#0#PHP" expanded="true" />
+            <element signature="e#118#146#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -877,7 +677,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/symfony/security-core/User/UserInterface.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="607">
+        <state relative-caret-position="1206">
           <caret line="74" column="34" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
           <folding />
         </state>
@@ -885,7 +685,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-972">
+        <state relative-caret-position="1350">
           <caret line="80" column="43" lean-forward="false" selection-start-line="80" selection-start-column="43" selection-end-line="80" selection-end-column="43" />
           <folding />
         </state>
@@ -901,10 +701,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/Security/TrickVoterTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="679">
+        <state relative-caret-position="630">
           <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="47" selection-end-column="9" />
           <folding>
-            <element signature="e#117#138#0#PHP" expanded="true" />
+            <element signature="e#117#138#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -919,7 +719,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/Security/UserCheckerTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
+        <state relative-caret-position="558">
           <caret line="39" column="27" lean-forward="false" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
           <folding>
             <element signature="e#118#138#0#PHP" expanded="true" />
@@ -927,18 +727,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="90">
-            <caret line="5" column="256" lean-forward="false" selection-start-line="5" selection-start-column="256" selection-end-line="5" selection-end-column="256" />
-            <folding />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="7" lean-forward="false" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
+    <entry file="file://$PROJECT_DIR$/fixtures/avatar.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -946,10 +743,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/fixtures/user.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="436">
+            <caret line="41" column="23" lean-forward="false" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/test/security.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/test/swiftmailer.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/test/web_profiler.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/test/framework.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/services_test.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Controller/TrickControllerTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="15" column="37" lean-forward="false" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env.dist">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="36" lean-forward="true" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpunit.xml.dist">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
